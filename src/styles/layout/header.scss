@@ -1,0 +1,13 @@
+.hamburgerLogo {
+	width: 75px;
+	height: 75px;
+	background: $color-light-pink;
+	left: 50%;
+	position: fixed;
+	display: flex;
+	align-items: center;
+
+	&__letter {
+		text-align: center;
+	}
+}

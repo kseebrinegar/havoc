@@ -1,0 +1,8 @@
+.hamburgerLogo {
+  width: 75px;
+  height: 75px;
+  background: #ea178c;
+  position: fixed; }
+  .hamburgerLogo__letter {
+    font-size: 32px;
+    font-family: 'Poppins' sans-serif; }
