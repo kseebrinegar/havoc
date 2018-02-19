@@ -1,8 +1,179 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+header {
+  background: #F4F4F4;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 99; }
+
+.drop-menu--closed {
+  height: 0px; }
+
+.drop-menu--open {
+  height: 325px; }
+
+.drop-menu--closed, .drop-menu--open {
+  transition: 1s;
+  list-style: none;
+  max-width: 1000px;
+  margin: auto; }
+  @media (max-width: 1200px) {
+    .drop-menu--closed, .drop-menu--open {
+      max-width: 750px; } }
+
+.drop-menu__list {
+  display: flex;
+  justify-content: space-around; }
+  @media (max-width: 900px) {
+    .drop-menu__list {
+      justify-content: center;
+      align-content: center;
+      flex-direction: column; } }
+  .drop-menu__list li {
+    text-align: center;
+    margin: 150px 0px 50px 0px;
+    flex: 1; }
+    @media (max-width: 900px) {
+      .drop-menu__list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 4%;
+        margin: 0px 0px 0px 0px;
+        flex: 0; }
+        .drop-menu__list li:first-of-type {
+          margin: 125px 0px 0px 0px; }
+        .drop-menu__list li:hover h2, .drop-menu__list li:hover p:first-of-type {
+          color: #EA178C;
+          cursor: pointer;
+          transition: .1s; } }
+    .drop-menu__list li h2 {
+      font-size: 32px;
+      font-color: black;
+      font-weight: 900;
+      padding-bottom: 5px;
+      cursor: pointer; }
+      @media (min-width: 1800px) {
+        .drop-menu__list li h2 {
+          font-size: 42px; } }
+      @media (max-width: 900px) {
+        .drop-menu__list li h2 {
+          font-size: 20px;
+          order: -2; } }
+      .drop-menu__list li h2:hover {
+        color: #EA178C; }
+    .drop-menu__list li p {
+      font-size: 14px;
+      color: #333333;
+      font-weight: 200;
+      margin-bottom: 25px; }
+      @media (max-width: 900px) {
+        .drop-menu__list li p {
+          margin-bottom: 0px; } }
+      @media (min-width: 1800px) {
+        .drop-menu__list li p {
+          font-size: 16px; } }
+    @media (max-width: 900px) {
+      .drop-menu__list li p:first-of-type {
+        font-size: 14px;
+        color: #333333;
+        font-weight: 200;
+        align-self: center; } }
+    .drop-menu__list li p:last-of-type {
+      margin-top: 35px;
+      border-bottom: 1px solid black;
+      width: 50px;
+      margin: 0 auto; }
+      @media (max-width: 900px) {
+        .drop-menu__list li p:last-of-type {
+          border-bottom: 1px solid black;
+          flex-grow: 1;
+          align-self: center;
+          margin: 0 10px;
+          order: -1; } }
+
+.hamburger-hover-color--pink:hover {
+  background: #EA178C; }
+
+.hamburger-hover-color--page-background:hover {
+  background: #F4F4F4; }
+
 .hamburgerLogo {
   width: 75px;
   height: 75px;
-  background: #ea178c;
-  position: fixed; }
-  .hamburgerLogo__letter {
-    font-size: 32px;
-    font-family: 'Poppins' sans-serif; }
+  position: fixed;
+  overflow: visible;
+  left: 50%;
+  display: flex;
+  margin: 50px 0px;
+  cursor: pointer;
+  transform: translateX(-50%);
+  z-index: 100; }
+  @media (max-width: 600px) {
+    .hamburgerLogo {
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      overflow: visible; } }
+  .hamburgerLogo:hover .hamburgerLogo__letter--font-big {
+    color: white; }
+  .hamburgerLogo__letter--font-big {
+    margin: auto;
+    font-size: 38px;
+    color: #EA178C;
+    font-weight: 900; }
+  .hamburgerLogo__letter--font-small {
+    margin: auto;
+    font-size: 18px;
+    color: #EA178C;
+    font-weight: 900; }
+    @media (max-width: 600px) {
+      .hamburgerLogo__letter--font-small {
+        margin: auto;
+        font-size: 16px;
+        color: #EA178C;
+        font-weight: 900; } }
+  .hamburgerLogo__animation-container {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    overflow: hidden; }
+    @media (max-width: 600px) {
+      .hamburgerLogo__animation-container {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        overflow: hidden; } }
+    .hamburgerLogo__animation-container_box {
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 150% 100%;
+      /* Safari 3-8 */
+      -ms-transform-origin: 150% 100%;
+      /* IE 9 */
+      height: 20px;
+      width: 300px;
+      margin: 0px 0px 100px -125px;
+      animation: logo 3s; }
+      .hamburgerLogo__animation-container_box--big {
+        margin-bottom: 15px;
+        background: #EA178C;
+        height: 35px; }
+      .hamburgerLogo__animation-container_box--small {
+        margin-bottom: 75px;
+        background: #EA178C;
+        height: 10px; }
+
+@keyframes logo {
+  0% {
+    -webkit-transform-origin: 150% 100%;
+    -ms-transform-origin: 150% 100%;
+    /* IE 9 */ }
+  100% {
+    -webkit-transform-origin: -150% 100%;
+    -ms-transform-origin: -150% 100%;
+    /* IE 9 */ } }

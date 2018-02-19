@@ -1,0 +1,19 @@
+@import '../abstracts/variables.scss';
+
+.fade-out {
+	transition: .5s;
+	opacity: 0;
+}
+
+.fade-in {
+	transition: .5s;
+	opacity: 1;
+}
+
+.background-white {
+	background: white;
+}
+
+.background-grey {
+	background: $color-page-background;
+}

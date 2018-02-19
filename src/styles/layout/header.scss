@@ -1,13 +1,210 @@
-.hamburgerLogo {
-	width: 75px;
-	height: 75px;
-	background: $color-light-pink;
-	left: 50%;
-	position: fixed;
-	display: flex;
-	align-items: center;
+@import "../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
 
-	&__letter {
+header {
+	background: $color-page-background;
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+	z-index: 99;
+}
+
+.drop-menu--closed {
+	height: 0px;
+	@extend %drop-menu;
+}
+
+.drop-menu--open {
+	height: 325px;
+	@extend %drop-menu;
+}
+
+%drop-menu {
+	transition: 1s;
+	list-style: none;
+	max-width: 1000px;
+	margin: auto;
+
+	@include respond(tab-land) {
+		max-width: 750px;
+	}
+}
+
+.drop-menu__list {
+	display: flex;
+	justify-content: space-around;
+
+	@include respond(tab-port) {
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+	}
+
+	li {
 		text-align: center;
+		margin: 150px 0px 50px 0px;
+		flex: 1;
+
+		@include respond(tab-port) {
+			display: flex;
+			justify-content: space-between;
+			padding: 5px 4%;
+			margin: 0px 0px 0px 0px;
+			flex: 0;
+
+			&:first-of-type {
+				margin: 125px 0px 0px 0px;
+			}
+
+			&:hover h2, &:hover p:first-of-type {
+				color: $color-font-light-pink;
+				cursor: pointer;
+				transition: .1s;
+			}
+		}
+
+		h2 {
+			
+			@include respond(big-desktop) {
+				font-size: 42px;
+			}
+
+			@include respond(tab-port) {
+				font-size: 20px;
+				order: -2;
+			}
+
+			font-size: 32px;
+			font-color: $color-font-dark-black;
+			font-weight: 900;
+			padding-bottom: 5px;
+			cursor: pointer;
+
+			&:hover {
+				color: $color-font-light-pink;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			color: $color-font-light-black;
+			font-weight: 200;
+			margin-bottom: 25px;
+
+			@include respond(tab-port) {
+				margin-bottom: 0px;
+			}
+
+
+			@include respond(big-desktop) {
+				font-size: 16px;
+			}
+		}
+
+		p:first-of-type {
+
+			@include respond(tab-port) {
+				font-size: 14px;
+				color: $color-font-light-black;
+				font-weight: 200;
+				align-self: center;
+			}
+		}
+
+		p:last-of-type  {
+			margin-top: 35px;
+			border-bottom: 1px solid black;
+			width: 50px;
+			margin: 0 auto;
+
+			@include respond(tab-port) {
+				border-bottom: 1px solid black;
+				flex-grow: 1;
+				align-self: center;
+				margin: 0 10px;
+				order: -1;
+			}
+		}
+	}
+}
+
+.hamburger-hover-color--pink {
+	&:hover {
+		background: $color-font-light-pink;
+	}
+}
+
+.hamburger-hover-color--page-background {
+	&:hover {
+		background: $color-page-background;
+	}
+}
+
+.hamburgerLogo {
+	@include height-width-position-overflow(75px, 75px, fixed, visible);
+	left: 50%;
+	display: flex;
+	margin: 50px 0px;
+	cursor: pointer;
+	transform: translateX(-50%);
+	z-index: 100;
+
+	@include respond(phone) {
+		@include height-width-position-overflow(60px, 60px, fixed, visible);
+	}
+
+	&:hover &__letter--font-big {
+		color: white;
+	}
+
+	&__letter--font-big {
+		@include hamburgerLogo__letter--font(38px);
+	}
+
+	&__letter--font-small {
+		@include hamburgerLogo__letter--font(18px);
+
+		@include respond(phone) {
+			@include hamburgerLogo__letter--font(16px);
+		}
+	}
+
+	&__animation-container {
+		@include height-width-position-overflow(75px, 75px, absolute, hidden);
+
+
+		@include respond(phone) {
+			@include height-width-position-overflow(60px, 60px, absolute, hidden);
+		}
+
+		&_box {
+			transform: rotate(-45deg);
+			-webkit-transform-origin: 150% 100%; /* Safari 3-8 */
+			-ms-transform-origin: 150% 100%; /* IE 9 */
+			height: 20px;
+			width: 300px;
+			margin: 0px 0px 100px -125px;
+			animation: logo 3s;
+
+			&--big {
+				@include hamburgerLogo__animation-container_box(15px, $color-font-light-pink, 35px);
+			}
+
+			&--small {
+				@include hamburgerLogo__animation-container_box(75px, $color-font-light-pink, 10px);
+			}
+		}
+	}
+}
+
+@keyframes logo {
+	0% {
+		-webkit-transform-origin: 150% 100%;
+		-ms-transform-origin: 150% 100%; /* IE 9 */
+	}
+
+	100% {
+		-webkit-transform-origin: -150% 100%;
+		-ms-transform-origin: -150% 100%; /* IE 9 */
 	}
 }
