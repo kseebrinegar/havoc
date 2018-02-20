@@ -86,8 +86,7 @@ table {
   max-width: 2000px;
   position: relative;
   transition: .5s;
-  transition-timing-function: ease-out;
-  top: 0vh; }
+  transition-timing-function: ease-out; }
 
 .position-top-vh-100 {
   top: -100vh;
@@ -434,8 +433,7 @@ table {
   max-width: 2000px;
   position: relative;
   transition: .5s;
-  transition-timing-function: ease-out;
-  top: 0vh; }
+  transition-timing-function: ease-out; }
 
 .position-top-vh-100 {
   top: -100vh;
