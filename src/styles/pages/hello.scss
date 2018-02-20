@@ -24,19 +24,19 @@
 		top: -1024px;
 	}
 
-	@include responsiveVh(phone2) {
+	@include responsiveVh(phone3) {
 		top: -320px;
 	}
 
-	@include responsiveVh(phone1) {
+	@include responsiveVh(phone4) {
 		top: -568px;
 	}
 
-	@include responsiveVh(phone1) {
+	@include responsiveVh(phone5) {
 		top: -320px;
 	}
 
-	@include responsiveVh(phone1) {
+	@include responsiveVh(phone6) {
 		top: -480px;
 	}
 }
@@ -45,30 +45,6 @@
 	top: 0vh;
 	transition: .5s;
 	transition-timing-function: ease-out;
-
-	@include responsiveVh(phone1) {
-		height: 768px;
-	}
-
-	@include responsiveVh(phone2) {
-		height: 1024px;
-	}
-
-	@include responsiveVh(phone2) {
-		height: 320px;
-	}
-
-	@include responsiveVh(phone1) {
-		height: 568px;
-	}
-
-	@include responsiveVh(phone1) {
-		height: 320px;
-	}
-
-	@include responsiveVh(phone1) {
-		height: 480px;
-	}
 }
 
 .home__section--havoc {
