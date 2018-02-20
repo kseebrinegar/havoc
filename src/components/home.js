@@ -25,7 +25,9 @@ class Home extends Component {
 		}
 	}
     changeState(changeState) {
+        
         this.setState((preveState) => {
+
             return {
                 animationLine: changeState.animationLine !== undefined ? changeState.animationLine : preveState.animationLine,
                 animationPara: changeState.animationPara !== undefined ? changeState.animationPara : preveState.animationPara,
@@ -44,11 +46,10 @@ class Home extends Component {
             }
         });
     }
-    scrollToSection(e, num1, num2) {
-        const chooseExpression1 = e.wheelDelta <= num1 || e.keyCode === 40 || (e.type === 'touchend' && this.state.touchMove <= Number(this.state.touchStart - 50));
-        const chooseExpression2 = e.wheelDelta >= num2 || e.keyCode === 38 || (e.type === 'touchend' && this.state.touchMove >= Number(this.state.touchStart + 50));
+    scrollToSection(e, express1, express2) {
+   
+        if (express1 && this.state.isUserAtTopOfPage) {
 
-        if (chooseExpression1 && this.state.isUserAtTopOfPage) {
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
@@ -65,7 +66,8 @@ class Home extends Component {
             });
 
             return;
-        } else if (chooseExpression2 && !this.state.isUserAtTopOfPage && this.state.slideShowContentPosition === 0) {
+        } else if (express2 && !this.state.isUserAtTopOfPage && this.state.slideShowContentPosition === 0) {
+
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
@@ -83,7 +85,8 @@ class Home extends Component {
             });
            
             return;
-        } else if (chooseExpression1 && !this.state.isUserAtTopOfPage) {
+        } else if (express1 && !this.state.isUserAtTopOfPage) {
+
             if (this.state.counter >= 4) {
                 return;
             }
@@ -102,7 +105,8 @@ class Home extends Component {
             });
 
             return;
-        } else if (chooseExpression2 && !this.state.isUserAtTopOfPage) {
+        } else if (express2 && !this.state.isUserAtTopOfPage) {
+
             this.changeState({
                 slideShowContentPosition: this.state.slideShowContentPosition + 100,
                 counter: this.state.counter - 1,
@@ -125,10 +129,10 @@ class Home extends Component {
             this.changeState({
                 touchStart: Math.round(e.touches[0].clientY),
                 backgroundImg: {
-                    1: 'fade-in',
-                    2: 'fade-out',
-                    3: 'fade-out',
-                    4: 'fade-out'
+                    1: this.state.backgroundImg[1],
+                    2: this.state.backgroundImg[2],
+                    3: this.state.backgroundImg[3],
+                    4: this.state.backgroundImg[4],
                 }
             });
         } 
@@ -137,11 +141,11 @@ class Home extends Component {
 
              this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
-                backgroundImg: {
-                    1: 'fade-in',
-                    2: 'fade-out',
-                    3: 'fade-out',
-                    4: 'fade-out'
+                 backgroundImg: {
+                    1: this.state.backgroundImg[1],
+                    2: this.state.backgroundImg[2],
+                    3: this.state.backgroundImg[3],
+                    4: this.state.backgroundImg[4],
                 }
             });
         } 
@@ -149,25 +153,25 @@ class Home extends Component {
     componentDidMount() {
         const self = this;
 
-        document.addEventListener("touchstart" || "touchmove", this.swipeEvent);
-        //document.addEventListener("touchmove", this.swipeEvent);
+        document.addEventListener("touchstart", this.swipeEvent);
+        document.addEventListener("touchmove", this.swipeEvent);
         document.addEventListener("touchend", function(e) {
-            self.scrollToSection(e, self.state.touchMove >= Number(self.state.touchStart - 50) , self.state.touchMove >= Number(self.state.touchStart + 50) );
+            self.scrollToSection(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
         });
 
         window.addEventListener("keydown", function(e) { // for key events
-            self.scrollToSection(e, 40, 38);
+            self.scrollToSection(e, e.keyCode === 40, e.keyCode === 38);
         });
 
 
         window.addEventListener('mousewheel', function(e) { // for wheel events
-            self.scrollToSection(e, -120, 120);
+            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE9, Chrome, Safari, Opera
         window.addEventListener('DOMMouseScroll', function(e) {
-            self.scrollToSection(e, -120, 120);
+            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // Firefox
         window.addEventListener('onmousewheel', function(e) {
-            self.scrollToSection(e, -120, 120);
+            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE 6/7/8
     }
 	componentWillMount() {
