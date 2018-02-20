@@ -1,8 +1,10 @@
 @import "../abstracts/variables.scss";
 
 html, body {
-  	overflow-x: hidden;
+  	overflow: hidden;
 }
 body {
   	position: relative;
+  	height: 100%;
+	width: 100%;
 }
