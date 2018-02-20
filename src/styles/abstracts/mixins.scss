@@ -53,32 +53,32 @@
 
 @mixin responsiveVh($breakpoint) {
 	@if $breakpoint == phone1 {
-		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 			@content
 		}
 	}
 	@if $breakpoint == phone2 {
-		@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 			@content
 		}
 	}
 	@if $breakpoint == phone3 {
-		@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
+		@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
 			@conent
 		}
 	}
 	@if $breakpoint == phone4 {
-		@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
+		@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
 			@content
 		}
 	}
 	@if $breakpoint == phone5 {
-		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+		@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 			@content
 		}
 	}
 	@if $breakpoint == phone6 {
-		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+		@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
 			@content
 		}
 	}
