@@ -17,27 +17,27 @@
 	transition: .5s;
 
 	@include responsiveVh(phone1) {
-		height: -768px;
+		top: -768px;
 	}
 
 	@include responsiveVh(phone2) {
-		height: -1024px;
+		top: -1024px;
 	}
 
 	@include responsiveVh(phone2) {
-		height: -320px;
+		top: -320px;
 	}
 
 	@include responsiveVh(phone1) {
-		height: -568px;
+		top -568px;
 	}
 
 	@include responsiveVh(phone1) {
-		height: -320px;
+		top: -320px;
 	}
 
 	@include responsiveVh(phone1) {
-		height: -480px;
+		top: -480px;
 	}
 }
 
