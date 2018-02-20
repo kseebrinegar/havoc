@@ -157,15 +157,7 @@ class Home extends Component {
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
-        }, 500);
-
-        window.addEventListener('mousewheel', function(e) { // for wheel events 
-            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
-        }); // IE9, Chrome, Safari, Opera*/
- 
-
-
-
+        }, 500, { 'trailing': false });
 
         document.addEventListener("touchstart", this.swipeEvent);
         document.addEventListener("touchmove", this.swipeEvent);
@@ -177,6 +169,10 @@ class Home extends Component {
             throttleFunction(e, e.keyCode === 40, e.keyCode === 38);
         });
 
+        window.addEventListener('mousewheel', function(e) { // for wheel events 
+            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+        }); // IE9, Chrome, Safari, Opera*/
+ 
         window.addEventListener('DOMMouseScroll', function(e) {
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // Firefox
