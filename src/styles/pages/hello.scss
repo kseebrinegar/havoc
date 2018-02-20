@@ -335,27 +335,27 @@
 			height: 100vh;
 
 			@include responsiveVh(phone1) {
-				height: 768px;
+				height: 3,072px;
 			}
 
 			@include responsiveVh(phone2) {
-				height: 1024px;
+				height: 4096px;
 			}
 
 			@include responsiveVh(phone2) {
-				height: 320px;
+				height: 1280px;
 			}
 
 			@include responsiveVh(phone1) {
-				height: 568px;
+				height: 2272px;
 			}
 
 			@include responsiveVh(phone1) {
-				height: 320px;
+				height: 1280px;
 			}
 
 			@include responsiveVh(phone1) {
-				height: 480px;
+				height: 1920px;
 			}
 
 			p:first-of-type {
