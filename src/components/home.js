@@ -4,9 +4,8 @@ import uuid from 'uuid';
 class Home extends Component {
 	constructor() {
 		super()
-        this.wheelEvent = this.wheelEvent.bind(this);
+        this.scrollToSection = this.scrollToSection.bind(this);
         this.changeState = this.changeState.bind(this);
-        this.keyEvent = this.keyEvent.bind(this);
         this.swipeEvent = this.swipeEvent.bind(this);
 		this.state = {
 			animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
@@ -45,14 +44,18 @@ class Home extends Component {
             }
         });
     }
-    wheelEvent(e) {
-      
-        if (e.wheelDelta <=  -120 && this.state.isUserAtTopOfPage) {
+    scrollToSection(e, num1, num2) {
+        const chooseExpression1 = e.wheelDelta <= num1 || e.keyCode === 40 || (e.type === 'touchend' && this.state.touchMove <= Number(this.state.touchStart - 50));
+        const chooseExpression2 = e.wheelDelta >= num2 || e.keyCode === 38 || (e.type === 'touchend' && this.state.touchMove >= Number(this.state.touchStart + 50));
+
+        if (chooseExpression1 && this.state.isUserAtTopOfPage) {
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
                 homeScrollDown: 'home position-top-vh-100',
                 isUserAtTopOfPage: false,
+                touchMove: null,
+                touchStart: null,
                 backgroundImg: {
                     1: 'fade-in',
                     2: 'fade-out',
@@ -62,12 +65,14 @@ class Home extends Component {
             });
 
             return;
-        } else if (e.wheelDelta >= 120 && !this.state.isUserAtTopOfPage && this.state.slideShowContentPosition === 0) {
+        } else if (chooseExpression2 && !this.state.isUserAtTopOfPage && this.state.slideShowContentPosition === 0) {
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
                 homeScrollDown: 'home position-top-vh-0',
                 isUserAtTopOfPage: true,
+                touchMove: null,
+                touchStart: null,
                 counter: 1,
                 backgroundImg: {
                     1: 'fade-in',
@@ -78,7 +83,7 @@ class Home extends Component {
             });
            
             return;
-        } else if (e.wheelDelta <= -120 && !this.state.isUserAtTopOfPage) {
+        } else if (chooseExpression1 && !this.state.isUserAtTopOfPage) {
             if (this.state.counter >= 4) {
                 return;
             }
@@ -86,6 +91,8 @@ class Home extends Component {
             this.changeState({
                 slideShowContentPosition: this.state.slideShowContentPosition -100,
                 counter: this.state.counter + 1,
+                touchMove: null,
+                touchStart: null,
                 backgroundImg: {
                     1: (this.state.counter + 1) === 1 ? 'fade-in' : 'fade-out',
                     2: (this.state.counter + 1) === 2 ? 'fade-in' : 'fade-out',
@@ -95,10 +102,12 @@ class Home extends Component {
             });
 
             return;
-        } else if (e.wheelDelta >= -120 && !this.state.isUserAtTopOfPage) {
+        } else if (chooseExpression2 && !this.state.isUserAtTopOfPage) {
             this.changeState({
                 slideShowContentPosition: this.state.slideShowContentPosition + 100,
                 counter: this.state.counter - 1,
+                touchMove: null,
+                touchStart: null,
                 backgroundImg: {
                     1: (this.state.counter - 1) === 1 ? 'fade-in' : 'fade-out',
                     2: (this.state.counter - 1) === 2 ? 'fade-in' : 'fade-out',
@@ -107,69 +116,7 @@ class Home extends Component {
                 }
             });
         }
-    }
-    keyEvent(e) {
-    
-        if (e.keyCode === 40 && this.state.isUserAtTopOfPage) {
-            this.changeState({
-                animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
-                animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
-                homeScrollDown: 'home position-top-vh-100',
-                isUserAtTopOfPage: false,
-                backgroundImg: {
-                    1: 'fade-in',
-                    2: 'fade-out',
-                    3: 'fade-out',
-                    4: 'fade-out'
-                }
-            });
-
-            return;
-        } else if (e.keyCode === 38 && !this.state.isUserAtTopOfPage && this.state.slideShowContentPosition === 0) {
-            this.changeState({
-                animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
-                animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
-                homeScrollDown: 'home position-top-vh-0',
-                isUserAtTopOfPage: true,
-                counter: 1,
-                backgroundImg: {
-                    1: 'fade-in',
-                    2: 'fade-out',
-                    3: 'fade-out',
-                    4: 'fade-out'
-                }
-            });
-           
-            return;
-        } else if (e.keyCode === 40 && !this.state.isUserAtTopOfPage) {
-            if (this.state.counter >= 4) {
-                return;
-            }
-
-            this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition -100,
-                counter: this.state.counter + 1,
-                backgroundImg: {
-                    1: (this.state.counter + 1) === 1 ? 'fade-in' : 'fade-out',
-                    2: (this.state.counter + 1) === 2 ? 'fade-in' : 'fade-out',
-                    3: (this.state.counter + 1) === 3 ? 'fade-in' : 'fade-out',
-                    4: (this.state.counter + 1) === 4 ? 'fade-in' : 'fade-out'
-                }
-            });
-
-            return;
-        } else if (e.keyCode === 38 && !this.state.isUserAtTopOfPage) {
-            this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition + 100,
-                counter: this.state.counter - 1,
-                backgroundImg: {
-                    1: (this.state.counter - 1) === 1 ? 'fade-in' : 'fade-out',
-                    2: (this.state.counter - 1) === 2 ? 'fade-in' : 'fade-out',
-                    3: (this.state.counter - 1) === 3 ? 'fade-in' : 'fade-out',
-                    4: (this.state.counter - 1) === 4 ? 'fade-in' : 'fade-out'
-                }
-            });
-        }
+        
     }
     swipeEvent(e) {
  
@@ -198,131 +145,30 @@ class Home extends Component {
                 }
             });
         } 
-
-        if (e.type === 'touchend') {
-
-            if (this.state.touchMove <= Number(this.state.touchStart - 50) && this.state.isUserAtTopOfPage) {
-                this.changeState({
-                    animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
-                    animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
-                    homeScrollDown: 'home position-top-vh-100',
-                    isUserAtTopOfPage: false,
-                    touchMove: null,
-                    touchStart: null,
-                    backgroundImg: {
-                        1: 'fade-in',
-                        2: 'fade-out',
-                        3: 'fade-out',
-                        4: 'fade-out'
-                    }
-                });
-
-                return;
-            } else if (this.state.touchMove >= Number(this.state.touchStart + 50) && this.state.slideShowContentPosition === 0) {
-                this.changeState({
-                    animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
-                    animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
-                    homeScrollDown: 'home position-top-vh-0',
-                    isUserAtTopOfPage: true,
-                    touchMove: null,
-                    touchStart: null,
-                    counter: 1,
-                    backgroundImg: {
-                        1: 'fade-in',
-                        2: 'fade-out',
-                        3: 'fade-out',
-                        4: 'fade-out'
-                    }
-                });
-               
-                return;
-            } else if (this.state.touchMove <= Number(this.state.touchStart - 50) && !this.state.isUserAtTopOfPage) {
-                if (this.state.counter >= 4) {
-                    return;
-                }
-                console.log('meow');
-                this.changeState({
-                    slideShowContentPosition: this.state.slideShowContentPosition -100,
-                    counter: this.state.counter + 1,
-                    touchMove: null,
-                    touchStart: null,
-                    backgroundImg: {
-                        1: (this.state.counter + 1) === 1 ? 'fade-in' : 'fade-out',
-                        2: (this.state.counter + 1) === 2 ? 'fade-in' : 'fade-out',
-                        3: (this.state.counter + 1) === 3 ? 'fade-in' : 'fade-out',
-                        4: (this.state.counter + 1) === 4 ? 'fade-in' : 'fade-out'
-                    }
-                });
-
-                return;
-            } else if (this.state.touchMove >= Number(this.state.touchStart + 50) && !this.state.isUserAtTopOfPage) {
-                console.log('pooo');
-                this.changeState({
-                    slideShowContentPosition: this.state.slideShowContentPosition + 100,
-                    counter: this.state.counter - 1,
-                    touchMove: null,
-                    touchStart: null,
-                    backgroundImg: {
-                        1: (this.state.counter - 1) === 1 ? 'fade-in' : 'fade-out',
-                        2: (this.state.counter - 1) === 2 ? 'fade-in' : 'fade-out',
-                        3: (this.state.counter - 1) === 3 ? 'fade-in' : 'fade-out',
-                        4: (this.state.counter - 1) === 4 ? 'fade-in' : 'fade-out'
-                    }
-                });
-            }  
-
-        }
-
-       /* if (e.type === 'touchend' && this.state.touchMove !== null) {
-
-            if (this.state.touchMove >= Number(this.state.touchStart + 50)) {
-                
-                if (this.state.counter >= 4) {
-                    return;
-                }
-           
-                this.changeState({
-                    slideShowContentPosition: this.state.slideShowContentPosition -100,
-                    counter: this.state.counter - 1,
-                    touchMove: null,
-                    touchStart: null,
-                    backgroundImg: {
-                        1: (this.state.counter - 1) === 1 ? 'fade-in' : 'fade-out',
-                        2: (this.state.counter - 1) === 2 ? 'fade-in' : 'fade-out',
-                        3: (this.state.counter - 1) === 3 ? 'fade-in' : 'fade-out',
-                        4: (this.state.counter - 1) === 4 ? 'fade-in' : 'fade-out'
-                    }
-                });
-
-                
-            } else if (this.state.touchMove <= Number(this.state.touchStart - 50)) {
-
-                this.changeState({
-                    slideShowContentPosition: this.state.slideShowContentPosition + 100,
-                    counter: this.state.counter + 1,
-                    touchMove: null,
-                    touchStart: null,
-                    backgroundImg: {
-                        1: (this.state.counter + 1) === 1 ? 'fade-in' : 'fade-out',
-                        2: (this.state.counter + 1) === 2 ? 'fade-in' : 'fade-out',
-                        3: (this.state.counter + 1) === 3 ? 'fade-in' : 'fade-out',
-                        4: (this.state.counter + 1) === 4 ? 'fade-in' : 'fade-out'
-                    }
-                });
-            }
-
-            return;
-            
-        }*/
     }
     componentDidMount() {
-        document.addEventListener('touchstart', this.swipeEvent);
-        document.addEventListener('touchend', this.swipeEvent);            
-        document.addEventListener('touchmove', this.swipeEvent);
-        window.addEventListener("keydown", this.keyEvent);
-        window.addEventListener('mousewheel', this.wheelEvent); // IE9, Chrome, Safari, Opera
-        window.addEventListener('DOMMouseScroll', this.wheelEvent); // Firefox
-        window.addEventListener('onmousewheel', this.wheelEvent); // IE 6/7/8
+        const self = this;
+
+        document.addEventListener("touchstart" || "touchmove", this.swipeEvent);
+        //document.addEventListener("touchmove", this.swipeEvent);
+        document.addEventListener("touchend", function(e) {
+            self.scrollToSection(e, self.state.touchMove >= Number(self.state.touchStart - 50) , self.state.touchMove >= Number(self.state.touchStart + 50) );
+        });
+
+        window.addEventListener("keydown", function(e) { // for key events
+            self.scrollToSection(e, 40, 38);
+        });
+
+
+        window.addEventListener('mousewheel', function(e) { // for wheel events
+            self.scrollToSection(e, -120, 120);
+        }); // IE9, Chrome, Safari, Opera
+        window.addEventListener('DOMMouseScroll', function(e) {
+            self.scrollToSection(e, -120, 120);
+        }); // Firefox
+        window.addEventListener('onmousewheel', function(e) {
+            self.scrollToSection(e, -120, 120);
+        }); // IE 6/7/8
     }
 	componentWillMount() {
 		setTimeout(() => {
