@@ -1,4 +1,5 @@
+html, body {
+  overflow-x: hidden; }
+
 body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden; }
+  position: relative; }
