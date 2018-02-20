@@ -86,7 +86,7 @@ table {
   position: absolute;
   transition: .5s;
   transition-timing-function: ease-out;
-  top: 0%; }
+  top: 0vh; }
 
 .position-top-vh-100 {
   top: -100%;
@@ -109,6 +109,24 @@ table {
   position: absolute;
   width: 100%;
   overflow: hidden; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--havoc {
+      height: 1024px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--havoc {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 568px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 480px; } }
   .home__section--havoc .home__section--havoc__title {
     font-size: 275px;
     letter-spacing: -10px;
@@ -161,6 +179,24 @@ table {
   padding-top: 100vh;
   overflow: hidden;
   height: 100vh; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 1024px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 568px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
     background-image: url("/img/home/slider1.jpg");
     background-repeat: no-repeat;
@@ -168,9 +204,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
     background-image: url("/img/home/slider2.jpg");
     background-repeat: no-repeat;
@@ -178,9 +232,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
     background-image: url("/img/home/slider3.jpg");
     background-repeat: no-repeat;
@@ -188,9 +260,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
     background-image: url("/img/home/slider4.jpg");
     background-repeat: no-repeat;
@@ -198,9 +288,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show__counter, .home__section--slide-show .home__section--slide-show__content {
     margin-top: 20vh;
     color: white;
@@ -223,6 +331,24 @@ table {
     transition-timing-function: ease-out; }
     .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
       height: 100vh; }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 768px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 1024px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 320px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 568px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 320px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 480px; } }
       @media (min-width: 1800px) {
         .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
           font-size: 18px; } }
@@ -272,7 +398,7 @@ table {
   position: absolute;
   transition: .5s;
   transition-timing-function: ease-out;
-  top: 0%; }
+  top: 0vh; }
 
 .position-top-vh-100 {
   top: -100%;
@@ -295,6 +421,24 @@ table {
   position: absolute;
   width: 100%;
   overflow: hidden; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--havoc {
+      height: 1024px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--havoc {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 568px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--havoc {
+      height: 480px; } }
   .home__section--havoc .home__section--havoc__title {
     font-size: 275px;
     letter-spacing: -10px;
@@ -347,6 +491,24 @@ table {
   padding-top: 100vh;
   overflow: hidden;
   height: 100vh; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 1024px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 568px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 320px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
     background-image: url("/img/home/slider1.jpg");
     background-repeat: no-repeat;
@@ -354,9 +516,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
     background-image: url("/img/home/slider2.jpg");
     background-repeat: no-repeat;
@@ -364,9 +544,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
     background-image: url("/img/home/slider3.jpg");
     background-repeat: no-repeat;
@@ -374,9 +572,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
     background-image: url("/img/home/slider4.jpg");
     background-repeat: no-repeat;
@@ -384,9 +600,27 @@ table {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show__counter, .home__section--slide-show .home__section--slide-show__content {
     margin-top: 20vh;
     color: white;
@@ -409,6 +643,24 @@ table {
     transition-timing-function: ease-out; }
     .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
       height: 100vh; }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 768px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 1024px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 320px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 568px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 320px; } }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
+          height: 480px; } }
       @media (min-width: 1800px) {
         .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
           font-size: 18px; } }
