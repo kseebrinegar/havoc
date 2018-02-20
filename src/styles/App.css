@@ -84,7 +84,7 @@ table {
   width: 100%;
   margin: 0 auto;
   max-width: 2000px;
-  position: absolute;
+  position: relative;
   transition: .5s;
   transition-timing-function: ease-out;
   top: 0vh; }
@@ -432,7 +432,7 @@ table {
   width: 100%;
   margin: 0 auto;
   max-width: 2000px;
-  position: absolute;
+  position: relative;
   transition: .5s;
   transition-timing-function: ease-out;
   top: 0vh; }
