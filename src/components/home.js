@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import uuid from 'uuid';
 
 class Home extends Component {
@@ -151,27 +152,36 @@ class Home extends Component {
         } 
     }
     componentDidMount() {
+    
         const self = this;
+        const throttleFunction = _.throttle((e, express1, express2) => {
+            this.scrollToSection(e, express1, express2);
+           
+        }, 500);
+
+        window.addEventListener('mousewheel', function(e) { // for wheel events 
+            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+        }); // IE9, Chrome, Safari, Opera*/
+ 
+
+
+
 
         document.addEventListener("touchstart", this.swipeEvent);
         document.addEventListener("touchmove", this.swipeEvent);
         document.addEventListener("touchend", function(e) {
-            self.scrollToSection(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
+            throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
         });
 
         window.addEventListener("keydown", function(e) { // for key events
-            self.scrollToSection(e, e.keyCode === 40, e.keyCode === 38);
+            throttleFunction(e, e.keyCode === 40, e.keyCode === 38);
         });
 
-
-        window.addEventListener('mousewheel', function(e) { // for wheel events
-            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
-        }); // IE9, Chrome, Safari, Opera
         window.addEventListener('DOMMouseScroll', function(e) {
-            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // Firefox
         window.addEventListener('onmousewheel', function(e) {
-            self.scrollToSection(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE 6/7/8
     }
 	componentWillMount() {
