@@ -9,7 +9,8 @@ html, body {
   overflow: hidden; }
 
 body {
-  position: relative; }
+  position: relative;
+  height: 1200px; }
 
 .fade-out {
   transition: .5s;
@@ -84,7 +85,7 @@ table {
   width: 100%;
   margin: 0 auto;
   max-width: 2000px;
-  position: relative;
+  position: absolute;
   transition: .5s;
   transition-timing-function: ease-out; }
 
@@ -413,7 +414,7 @@ table {
   width: 100%;
   margin: 0 auto;
   max-width: 2000px;
-  position: relative;
+  position: absolute;
   transition: .5s;
   transition-timing-function: ease-out; }
 
