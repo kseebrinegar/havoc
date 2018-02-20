@@ -4,7 +4,32 @@ html, body {
   	overflow: hidden;
 }
 body {
-	//position: relative;
-	//height: 1200px;
+	position: relative;
+	height: 1200px;
+
+	@include responsiveVh(phone1) {
+		height: 768px;
+	}
+
+	@include responsiveVh(phone2) {
+		height: 1024px;
+	}
+
+	@include responsiveVh(phone2) {
+		height: 320px;
+	}
+
+	@include responsiveVh(phone1) {
+		height: 568px;
+	}
+
+	@include responsiveVh(phone1) {
+		height: 320px;
+	}
+
+	@include responsiveVh(phone1) {
+		height: 480px;
+	}
+
 }
 
