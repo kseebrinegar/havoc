@@ -378,7 +378,7 @@
 		transition: .5s;
 		transition-timing-function: ease-out;
 
-		@include responsiveVh(phone1) {
+			@include responsiveVh(phone1) {
 				height: 3072px;
 			}
 
@@ -400,7 +400,8 @@
 
 			@include responsiveVh(phone6) {
 				height: 1920px;
-
+			}
+			
 		&--container1, &--container2, &--container3, &--container4 {
 			height: 100vh;
 
