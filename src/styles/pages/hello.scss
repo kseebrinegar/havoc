@@ -158,7 +158,7 @@
 	height: 568vh;
 
 
-	@include responsiveVh(phone1) {
+	/*@include responsiveVh(phone1) {
 		height: 768px;
 		padding-top: 768px;
 	}
@@ -186,7 +186,7 @@
 	@include responsiveVh(phone6) {
 		height: 480px;
 		padding-top: 480px;
-	}
+	}*/
 	
 	.home__section--slide-show--backgorund-img-1 {
 		background-image: url("/img/home/slider1.jpg");
@@ -199,7 +199,7 @@
 		position: absolute;
 		z-index: -1;
 
-		@include responsiveVh(phone1) {
+		/*@include responsiveVh(phone1) {
 			height: 768px;
 		}
 
@@ -221,7 +221,7 @@
 
 		@include responsiveVh(phone6) {
 			height: 480px;
-		}
+		}*/
 	}
 
 	.home__section--slide-show--backgorund-img-2 {
@@ -235,7 +235,7 @@
 		position: absolute;
 		z-index: -1;
 
-		@include responsiveVh(phone1) {
+		/*@include responsiveVh(phone1) {
 			height: 768px;
 		}
 
@@ -253,7 +253,7 @@
 
 		@include responsiveVh(phone5) {
 			height: 320px;
-		}
+		}*/
 
 		@include responsiveVh(phone6) {
 			height: 480px;
@@ -271,7 +271,7 @@
 		position: absolute;
 		z-index: -1;
 
-		@include responsiveVh(phone1) {
+		/*@include responsiveVh(phone1) {
 			height: 768px;
 		}
 
@@ -293,7 +293,7 @@
 
 		@include responsiveVh(phone6) {
 			height: 480px;
-		}
+		}*/
 	}
 
 	.home__section--slide-show--backgorund-img-4 {
@@ -307,7 +307,7 @@
 		position: absolute;
 		z-index: -1;
 
-		@include responsiveVh(phone1) {
+		/*@include responsiveVh(phone1) {
 			height: 768px;
 		}
 
@@ -329,7 +329,7 @@
 
 		@include responsiveVh(phone6) {
 			height: 480px;
-		}
+		}*/
 	}
 
 	.home__section--slide-show__counter, .home__section--slide-show__content  {
@@ -360,7 +360,7 @@
 		transition: .5s;
 		transition-timing-function: ease-out;
 
-			@include responsiveVh(phone1) {
+			/*@include responsiveVh(phone1) {
 				height: 3,072px;
 			}
 
@@ -382,12 +382,12 @@
 
 			@include responsiveVh(phone6) {
 				height: 1920px;
-			}
+			}*/
 
 		&--container1, &--container2, &--container3, &--container4 {
-			height: 568vh;
+			height: 568px;
 
-			@include responsiveVh(phone1) {
+			/*@include responsiveVh(phone1) {
 				height: 768px;
 			}
 
@@ -416,7 +416,7 @@
 				@include respond(big-desktop) {
 					font-size: 18px;
 				}
-			}
+			}*/
 		}
 
 		h3 {
