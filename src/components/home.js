@@ -18,7 +18,7 @@ class Home extends Component {
                 3: 'fade-out',
                 4: 'fade-out'
             },
-            slideShowContentPosition: 0,
+            slideShowContentPosition: 'position-top-vh-0',
             isUserAtTopOfPage: true,
             counter: 1,
             touchStart: null,
@@ -139,7 +139,7 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-
+            e.preventDefault();
              this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                  backgroundImg: {
@@ -210,7 +210,7 @@ class Home extends Component {
                 <section className="home__section--slide-show">
                 	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
    					<p className="home__section--slide-show__bottom-border"></p>
-                	<div className="home__section--slide-show__content" style={{top: this.state.slideShowContentPosition + 'vh'}}>
+                	<div className={this.state.slideShowContentPosition + " home__section--slide-show__content"}>
                         <div className="home__section--slide-show__content--container1">
                     		<p>News.</p>
                     		<h3>We're tight.</h3>
