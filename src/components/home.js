@@ -124,7 +124,6 @@ class Home extends Component {
         
     }
     swipeEvent(e) {
-        e.preventDefault();
  
         if (e.type === 'touchstart') {
         
@@ -161,7 +160,10 @@ class Home extends Component {
         }, 500, { 'trailing': false });
 
         document.addEventListener("touchstart", this.swipeEvent);
-        document.addEventListener("touchmove", this.swipeEvent);
+        document.addEventListener("touchmove", function(e) {
+            e.preventDefault();
+            self.swipeEvent();
+        });
         document.addEventListener("touchend", function(e) {
             throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
         });
