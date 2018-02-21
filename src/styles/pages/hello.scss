@@ -153,9 +153,9 @@
 .home__section--slide-show {
 	display: flex;
 	width: 100%;
-	padding-top: 568vh;
+	padding-top: 568px;
 	overflow: hidden;
-	height: 568vh;
+	height: 568px;
 
 
 	/*@include responsiveVh(phone1) {
@@ -195,7 +195,7 @@
 		background-position: center;
 		background-size: cover;
 		width: 100%;
-		height: 568vh;
+		height: 568px;
 		position: absolute;
 		z-index: -1;
 
@@ -231,7 +231,7 @@
 		background-position: center;
 		background-size: cover;
 		width: 100%;
-		height: 568vh;
+		height: 568px;
 		position: absolute;
 		z-index: -1;
 
@@ -253,11 +253,11 @@
 
 		@include responsiveVh(phone5) {
 			height: 320px;
-		}*/
+		}
 
 		@include responsiveVh(phone6) {
 			height: 480px;
-		}
+		}*/
 	}
 
 	.home__section--slide-show--backgorund-img-3 {
@@ -267,7 +267,7 @@
 		background-position: center;
 		background-size: cover;
 		width: 100%;
-		height: 568vh;
+		height: 568px;
 		position: absolute;
 		z-index: -1;
 
@@ -303,7 +303,7 @@
 		background-position: center;
 		background-size: cover;
 		width: 100%;
-		height: 568vh;
+		height: 568px;
 		position: absolute;
 		z-index: -1;
 
