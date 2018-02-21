@@ -163,7 +163,7 @@ class Home extends Component {
 
         document.addEventListener("touchstart", this.swipeEvent);
         document.addEventListener("touchmove", function(e) {
-            self.swipeEvent();
+            self.swipeEvent;
         });
         document.addEventListener("touchend", function(e) {
             throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
