@@ -154,18 +154,18 @@ class Home extends Component {
     componentDidMount() {
         
         const self = this;
-        const rootBody = document.getElementById('root');
+        //const rootBody = document.getElementById('root');
 
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
         }, 500, { 'trailing': false });
 
-        rootBody.addEventListener("touchstart", this.swipeEvent);
-        rootBody.addEventListener("touchmove", function(e) {
+        document.addEventListener("touchstart", this.swipeEvent);
+        document.addEventListener("touchmove", function(e) {
             self.swipeEvent();
         });
-        rootBody.addEventListener("touchend", function(e) {
+        document.addEventListener("touchend", function(e) {
             throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
         });
 
