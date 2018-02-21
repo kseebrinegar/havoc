@@ -12,11 +12,11 @@
 }
 
 .position-top-vh-100 {
-	top: -100vh;
+	top: -568px;
 	transition-timing-function: ease-out;
 	transition: .5s;
 
-	@include responsiveVh(phone1) {
+	/*@include responsiveVh(phone1) {
 		top: -768px;
 	}
 
@@ -38,11 +38,11 @@
 
 	@include responsiveVh(phone6) {
 		top: -480px;
-	}
+	}*/
 }
 
 .position-top-vh-0 {
-	top: 0vh;
+	top: 0px;
 	transition: .5s;
 	transition-timing-function: ease-out;
 }
@@ -156,9 +156,10 @@
 	padding-top: 568px;
 	overflow: hidden;
 	height: 568px;
+	background: red;
 
 
-	/*@include responsiveVh(phone1) {
+	@include responsiveVh(phone1) {
 		height: 768px;
 		padding-top: 768px;
 	}
@@ -186,7 +187,7 @@
 	@include responsiveVh(phone6) {
 		height: 480px;
 		padding-top: 480px;
-	}*/
+	}
 	
 	.home__section--slide-show--backgorund-img-1 {
 		background-image: url("/img/home/slider1.jpg");

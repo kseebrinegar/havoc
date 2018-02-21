@@ -101,30 +101,35 @@ table {
   top: 0; }
 
 .position-top-vh-100 {
-  top: -100vh;
+  top: -568px;
   transition-timing-function: ease-out;
-  transition: .5s; }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    .position-top-vh-100 {
-      top: -768px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .position-top-vh-100 {
-      top: -1024px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      @conent; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -568px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -320px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -480px; } }
+  transition: .5s;
+  /*@include responsiveVh(phone1) {
+		top: -768px;
+	}
+
+	@include responsiveVh(phone2) {
+		top: -1024px;
+	}
+
+	@include responsiveVh(phone3) {
+		top: -320px;
+	}
+
+	@include responsiveVh(phone4) {
+		top: -568px;
+	}
+
+	@include responsiveVh(phone5) {
+		top: -320px;
+	}
+
+	@include responsiveVh(phone6) {
+		top: -480px;
+	}*/ }
 
 .position-top-vh-0 {
-  top: 0vh;
+  top: 0px;
   transition: .5s;
   transition-timing-function: ease-out; }
 
@@ -213,35 +218,30 @@ table {
   padding-top: 568px;
   overflow: hidden;
   height: 568px;
-  /*@include responsiveVh(phone1) {
-		height: 768px;
-		padding-top: 768px;
-	}
-
-	@include responsiveVh(phone2) {
-		height: 1024px;
-		padding-top: 1024px;
-	}
-
-	@include responsiveVh(phone3) {
-		height: 320px;
-		padding-top: 320px;
-	}
-
-	@include responsiveVh(phone4) {
-		height: 568px;
-		padding-top: 568px;
-	}
-
-	@include responsiveVh(phone5) {
-		height: 320px;
-		padding-top: 320px;
-	}
-
-	@include responsiveVh(phone6) {
-		height: 480px;
-		padding-top: 480px;
-	}*/ }
+  background: red; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 768px;
+      padding-top: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 1024px;
+      padding-top: 1024px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      @conent; } }
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 568px;
+      padding-top: 568px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 320px;
+      padding-top: 320px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 480px;
+      padding-top: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
     background-image: url("/img/home/slider1.jpg");
     background-repeat: no-repeat;
@@ -498,30 +498,35 @@ table {
   top: 0; }
 
 .position-top-vh-100 {
-  top: -100vh;
+  top: -568px;
   transition-timing-function: ease-out;
-  transition: .5s; }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    .position-top-vh-100 {
-      top: -768px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    .position-top-vh-100 {
-      top: -1024px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      @conent; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -568px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -320px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    .position-top-vh-100 {
-      top: -480px; } }
+  transition: .5s;
+  /*@include responsiveVh(phone1) {
+		top: -768px;
+	}
+
+	@include responsiveVh(phone2) {
+		top: -1024px;
+	}
+
+	@include responsiveVh(phone3) {
+		top: -320px;
+	}
+
+	@include responsiveVh(phone4) {
+		top: -568px;
+	}
+
+	@include responsiveVh(phone5) {
+		top: -320px;
+	}
+
+	@include responsiveVh(phone6) {
+		top: -480px;
+	}*/ }
 
 .position-top-vh-0 {
-  top: 0vh;
+  top: 0px;
   transition: .5s;
   transition-timing-function: ease-out; }
 
@@ -610,35 +615,30 @@ table {
   padding-top: 568px;
   overflow: hidden;
   height: 568px;
-  /*@include responsiveVh(phone1) {
-		height: 768px;
-		padding-top: 768px;
-	}
-
-	@include responsiveVh(phone2) {
-		height: 1024px;
-		padding-top: 1024px;
-	}
-
-	@include responsiveVh(phone3) {
-		height: 320px;
-		padding-top: 320px;
-	}
-
-	@include responsiveVh(phone4) {
-		height: 568px;
-		padding-top: 568px;
-	}
-
-	@include responsiveVh(phone5) {
-		height: 320px;
-		padding-top: 320px;
-	}
-
-	@include responsiveVh(phone6) {
-		height: 480px;
-		padding-top: 480px;
-	}*/ }
+  background: red; }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .home__section--slide-show {
+      height: 768px;
+      padding-top: 768px; } }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .home__section--slide-show {
+      height: 1024px;
+      padding-top: 1024px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      @conent; } }
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 568px;
+      padding-top: 568px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 320px;
+      padding-top: 320px; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    .home__section--slide-show {
+      height: 480px;
+      padding-top: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
     background-image: url("/img/home/slider1.jpg");
     background-repeat: no-repeat;
