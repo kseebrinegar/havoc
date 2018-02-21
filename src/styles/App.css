@@ -15,28 +15,6 @@
 html, body {
   overflow: hidden; }
 
-body {
-  position: relative;
-  height: 1200px; }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    body {
-      height: 768px; } }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-    body {
-      height: 1024px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-    body {
-      @conent; } }
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-    body {
-      height: 568px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-      height: 320px; } }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-      height: 480px; } }
-
 .fade-out {
   transition: .5s;
   opacity: 0; }
