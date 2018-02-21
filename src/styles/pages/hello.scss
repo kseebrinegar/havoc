@@ -58,7 +58,7 @@
 	width: 100%;
 	overflow: hidden;
 
-	@include responsiveVh(phone1) {
+	/*@include responsiveVh(phone1) {
 		height: 768px;
 	}
 
@@ -80,7 +80,7 @@
 
 	@include responsiveVh(phone6) {
 		height: 480px;
-	}
+	}*/
 
 	.home__section--havoc__title {
 		font-size: 275px;
