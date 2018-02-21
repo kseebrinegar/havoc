@@ -6,8 +6,8 @@ html, body {
 }
 
 body {
-		position: relative;
-	height: 1200px;
+	position: relative;
+	//height: 1200px;
 
 	@include responsiveVh(phone1) {
 		height: 768px;
