@@ -124,6 +124,7 @@ class Home extends Component {
         
     }
     swipeEvent(e) {
+        e.preventDefault();
  
         if (e.type === 'touchstart') {
         
