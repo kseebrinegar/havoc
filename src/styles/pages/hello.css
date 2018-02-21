@@ -11,7 +11,8 @@
   max-width: 2000px;
   position: absolute;
   transition: .5s;
-  transition-timing-function: ease-out; }
+  transition-timing-function: ease-out;
+  top: 0vh; }
 
 .position-top-vh-100 {
   top: -100vh;
@@ -290,24 +291,6 @@
     height: 400vh;
     transition: .5s;
     transition-timing-function: ease-out; }
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-      .home__section--slide-show .home__section--slide-show__content {
-        height: 3072px; } }
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-      .home__section--slide-show .home__section--slide-show__content {
-        height: 4096px; } }
-    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
-      .home__section--slide-show .home__section--slide-show__content {
-        @conent; } }
-    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-      .home__section--slide-show .home__section--slide-show__content {
-        height: 2272px; } }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-      .home__section--slide-show .home__section--slide-show__content {
-        height: 1280px; } }
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-      .home__section--slide-show .home__section--slide-show__content {
-        height: 1920px; } }
     .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
       height: 100vh; }
       @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {

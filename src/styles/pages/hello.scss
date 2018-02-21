@@ -8,6 +8,7 @@
 	position: absolute;
 	transition: .5s;
 	transition-timing-function: ease-out;
+	top: 0vh;
 }
 
 .position-top-vh-100 {
@@ -377,8 +378,6 @@
 		height: 400vh;
 		transition: .5s;
 		transition-timing-function: ease-out;
-
-			
 
 		&--container1, &--container2, &--container3, &--container4 {
 			height: 100vh;
