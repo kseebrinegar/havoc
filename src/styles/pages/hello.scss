@@ -156,10 +156,9 @@
 	padding-top: 568px;
 	overflow: hidden;
 	height: 568px;
-	background: red;
 
 
-	@include responsiveVh(phone1) {
+	/*@include responsiveVh(phone1) {
 		height: 768px;
 		padding-top: 768px;
 	}
@@ -187,7 +186,7 @@
 	@include responsiveVh(phone6) {
 		height: 480px;
 		padding-top: 480px;
-	}
+	}*/
 	
 	.home__section--slide-show--backgorund-img-1 {
 		background-image: url("/img/home/slider1.jpg");
