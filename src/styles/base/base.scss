@@ -17,7 +17,7 @@ body {
 		height: 1024px;
 	}
 
-	@include responsiveVh(phone3) {
+	/*@include responsiveVh(phone3) {
 		height: 320px;
 	}
 
@@ -31,6 +31,6 @@ body {
 
 	@include responsiveVh(phone6) {
 		height: 480px;
-	}
+	}*/
 }
 
