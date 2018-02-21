@@ -139,8 +139,8 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-            e.preventDefault();
-             this.changeState({
+
+            this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                  backgroundImg: {
                     1: this.state.backgroundImg[1],
@@ -149,6 +149,8 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
+             e.preventDefault();
+
         } 
     }
     componentDidMount() {
