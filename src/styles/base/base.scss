@@ -5,10 +5,10 @@ html, body {
   	overflow: hidden;
 }
 body {
-	//position: relative;
-	//height: 1200px;
+	position: relative;
+	height: 1200px;
 
-	/*@include responsiveVh(phone1) {
+	@include responsiveVh(phone1) {
 		height: 768px;
 	}
 
@@ -30,6 +30,6 @@ body {
 
 	@include responsiveVh(phone6) {
 		height: 480px;
-	}*/
+	}
 }
 

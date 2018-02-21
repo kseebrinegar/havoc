@@ -44,6 +44,30 @@
 	top: 0vh;
 	transition: .5s;
 	transition-timing-function: ease-out;
+
+	@include responsiveVh(phone1) {
+		top: 0px;
+	}
+
+	@include responsiveVh(phone2) {
+		top: -0px;
+	}
+
+	@include responsiveVh(phone3) {
+		top: 0px;
+	}
+
+	@include responsiveVh(phone4) {
+		top: 0px;
+	}
+
+	@include responsiveVh(phone5) {
+		top: 0px;
+	}
+
+	@include responsiveVh(phone6) {
+		top: 0px;
+	}
 }
 
 .home__section--havoc {
