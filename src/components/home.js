@@ -162,9 +162,7 @@ class Home extends Component {
         }, 500, { 'trailing': false });
 
         document.addEventListener("touchstart", this.swipeEvent);
-        document.addEventListener("touchmove", function(e) {
-            self.swipeEvent;
-        });
+        document.addEventListener("touchmove", this.swipeEvent);
         document.addEventListener("touchend", function(e) {
             throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
         });
