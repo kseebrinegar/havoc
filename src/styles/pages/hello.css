@@ -15,35 +15,12 @@
   top: 0; }
 
 .position-top-vh-100 {
-  top: -568px;
+  top: -100vh;
   transition-timing-function: ease-out;
-  transition: .5s;
-  /*@include responsiveVh(phone1) {
-		top: -768px;
-	}
-
-	@include responsiveVh(phone2) {
-		top: -1024px;
-	}
-
-	@include responsiveVh(phone3) {
-		top: -320px;
-	}
-
-	@include responsiveVh(phone4) {
-		top: -568px;
-	}
-
-	@include responsiveVh(phone5) {
-		top: -320px;
-	}
-
-	@include responsiveVh(phone6) {
-		top: -480px;
-	}*/ }
+  transition: .5s; }
 
 .position-top-vh-0 {
-  top: 0px;
+  top: 0vh;
   transition: .5s;
   transition-timing-function: ease-out; }
 
@@ -53,33 +30,10 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 568px;
+  height: 100vh;
   position: absolute;
   width: 100%;
-  overflow: hidden;
-  /*@include responsiveVh(phone1) {
-		height: 768px;
-	}
-
-	@include responsiveVh(phone2) {
-		height: 1024px;
-	}
-
-	@include responsiveVh(phone3) {
-		height: 320px;
-	}
-
-	@include responsiveVh(phone4) {
-		height: 568px;
-	}
-
-	@include responsiveVh(phone5) {
-		height: 320px;
-	}
-
-	@include responsiveVh(phone6) {
-		height: 480px;
-	}*/ }
+  overflow: hidden; }
   .home__section--havoc .home__section--havoc__title {
     font-size: 275px;
     letter-spacing: -10px;
@@ -129,10 +83,9 @@
 .home__section--slide-show {
   display: flex;
   width: 100%;
-  padding-top: 568px;
+  padding-top: 100vh;
   overflow: hidden;
-  height: 568px;
-  background: red; }
+  height: 100vh; }
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     .home__section--slide-show {
       height: 768px;
@@ -163,32 +116,27 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 568px;
+    height: 100vh;
     position: absolute;
-    z-index: -1;
-    /*@include responsiveVh(phone1) {
-			height: 768px;
-		}
-
-		@include responsiveVh(phone2) {
-			height: 1024px;
-		}
-
-		@include responsiveVh(phone3) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone4) {
-			height: 568px;
-		}
-
-		@include responsiveVh(phone5) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone6) {
-			height: 480px;
-		}*/ }
+    z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        @conent; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-1 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
     background-image: url("/img/home/slider2.jpg");
     background-repeat: no-repeat;
@@ -196,32 +144,27 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 568px;
+    height: 100vh;
     position: absolute;
-    z-index: -1;
-    /*@include responsiveVh(phone1) {
-			height: 768px;
-		}
-
-		@include responsiveVh(phone2) {
-			height: 1024px;
-		}
-
-		@include responsiveVh(phone3) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone4) {
-			height: 568px;
-		}
-
-		@include responsiveVh(phone5) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone6) {
-			height: 480px;
-		}*/ }
+    z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        @conent; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-2 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
     background-image: url("/img/home/slider3.jpg");
     background-repeat: no-repeat;
@@ -229,32 +172,27 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 568px;
+    height: 100vh;
     position: absolute;
-    z-index: -1;
-    /*@include responsiveVh(phone1) {
-			height: 768px;
-		}
-
-		@include responsiveVh(phone2) {
-			height: 1024px;
-		}
-
-		@include responsiveVh(phone3) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone4) {
-			height: 568px;
-		}
-
-		@include responsiveVh(phone5) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone6) {
-			height: 480px;
-		}*/ }
+    z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        @conent; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-3 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
     background-image: url("/img/home/slider4.jpg");
     background-repeat: no-repeat;
@@ -262,32 +200,27 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 568px;
+    height: 100vh;
     position: absolute;
-    z-index: -1;
-    /*@include responsiveVh(phone1) {
-			height: 768px;
-		}
-
-		@include responsiveVh(phone2) {
-			height: 1024px;
-		}
-
-		@include responsiveVh(phone3) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone4) {
-			height: 568px;
-		}
-
-		@include responsiveVh(phone5) {
-			height: 320px;
-		}
-
-		@include responsiveVh(phone6) {
-			height: 480px;
-		}*/ }
+    z-index: -1; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 768px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 1024px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        @conent; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 568px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 320px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show--backgorund-img-4 {
+        height: 480px; } }
   .home__section--slide-show .home__section--slide-show__counter, .home__section--slide-show .home__section--slide-show__content {
     margin-top: 20vh;
     color: white;
@@ -305,64 +238,32 @@
     width: 50px; }
   .home__section--slide-show .home__section--slide-show__content {
     position: relative;
-    height: 2272px;
+    height: 400vh;
     transition: .5s;
-    transition-timing-function: ease-out;
-    /*@include responsiveVh(phone1) {
-				height: 3,072px;
-			}
-
-			@include responsiveVh(phone2) {
-				height: 4,096px;
-			}
-
-			@include responsiveVh(phone3) {
-				height: 1280px;
-			}
-
-			@include responsiveVh(phone4) {
-				height: 2272px;
-			}
-
-			@include responsiveVh(phone5) {
-				height: 1280px;
-			}
-
-			@include responsiveVh(phone6) {
-				height: 1920px;
-			}*/ }
+    transition-timing-function: ease-out; }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      .home__section--slide-show .home__section--slide-show__content {
+        height: 3,072px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      .home__section--slide-show .home__section--slide-show__content {
+        height: 4,096px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show__content {
+        @conent; } }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show__content {
+        height: 2272px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show__content {
+        height: 1280px; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+      .home__section--slide-show .home__section--slide-show__content {
+        height: 1920px; } }
     .home__section--slide-show .home__section--slide-show__content--container1, .home__section--slide-show .home__section--slide-show__content--container2, .home__section--slide-show .home__section--slide-show__content--container3, .home__section--slide-show .home__section--slide-show__content--container4 {
-      height: 568px;
-      /*@include responsiveVh(phone1) {
-				height: 768px;
-			}
-
-			@include responsiveVh(phone2) {
-				height: 1024px;
-			}
-
-			@include responsiveVh(phone3) {
-				height: 320px;
-			}
-
-			@include responsiveVh(phone4) {
-				height: 568px;
-			}
-
-			@include responsiveVh(phone5) {
-				height: 320px;
-			}
-
-			@include responsiveVh(phone6) {
-				height: 480px;
-			}
-
-			p:first-of-type {
-
-				@include respond(big-desktop) {
-					font-size: 18px;
-				}
-			}*/ }
+      height: 100vh; }
+      @media (min-width: 1800px) {
+        .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
+          font-size: 18px; } }
     .home__section--slide-show .home__section--slide-show__content h3 {
       margin-top: 10vh;
       font-size: 72px; }
@@ -394,3 +295,133 @@
       margin: 5vh 0;
       height: 1px;
       width: 100px; }
+
+/* fix iOS bug not displaying 100vh correctly */
+/* ipad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .position-top-vh-100 {
+    top: -768px; }
+  .home__section--havoc {
+    height: 768px; }
+  .home__section--slide-show {
+    padding-top: 768px;
+    height: 768px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 768px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 768px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 768px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 768px; }
+  .home__section--slide-show__content {
+    height: 3,072px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 768px; } }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .position-top-vh-100 {
+    top: -1024px; }
+  .home__section--havoc {
+    height: 1024px; }
+  .home__section--slide-show {
+    padding-top: 1024px;
+    height: 1024px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 1024px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 1024px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 1024px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 768px; }
+  .home__section--slide-show__content {
+    height: 4096px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 1024px; } }
+
+/* iphone5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  .position-top-vh-100 {
+    top: -320px; }
+  .home__section--havoc {
+    height: 320px; }
+  .home__section--slide-show {
+    padding-top: 320px;
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 320px; }
+  .home__section--slide-show__content {
+    height: 1280px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 320px; } }
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  .position-top-vh-100 {
+    top: -568px; }
+  .home__section--havoc {
+    height: 568px; }
+  .home__section--slide-show {
+    padding-top: 568px;
+    height: 568px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 568px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 568px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 568px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 568px; }
+  .home__section--slide-show__content {
+    height: 2272px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 568px; } }
+
+/* iPhone 4 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .position-top-vh-100 {
+    top: -320px; }
+  .home__section--havoc {
+    height: 320px; }
+  .home__section--slide-show {
+    padding-top: 320px;
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 320px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 320px; }
+  .home__section--slide-show__content {
+    height: 1280px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 320px; } }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .position-top-vh-100 {
+    top: -480px; }
+  .home__section--havoc {
+    height: 480px; }
+  .home__section--slide-show {
+    padding-top: 480px;
+    height: 480px; }
+  .home__section--slide-show--backgorund-img-1 {
+    height: 480px; }
+  .home__section--slide-show--backgorund-img-2 {
+    height: 480px; }
+  .home__section--slide-show--backgorund-img-3 {
+    height: 480px; }
+  .home__section--slide-show--backgorund-img-4 {
+    height: 480px; }
+  .home__section--slide-show__content {
+    height: 1920px; }
+    .home__section--slide-show__content--container1, .home__section--slide-show__content--container2, .home__section--slide-show__content--container3, .home__section--slide-show__content--container4 {
+      height: 480px; } }
