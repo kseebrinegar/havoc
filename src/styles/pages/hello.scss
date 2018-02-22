@@ -393,10 +393,7 @@
 
 /* fix iOS bug not displaying 100vh correctly */
 /* ipad */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-	body {
-		height: -768px;
-  	}
+/*@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 
 	.position-top-vh-100 {
 		top: -768px;
@@ -474,7 +471,7 @@
 		}
 	}
 }
-/* iphone5 */
+
 
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
 	.position-top-vh-100 {
@@ -516,10 +513,6 @@
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
-	body {
-		height: 568px;
-	}
-
 	.position-top-vh-100 {
 		top: -568px;
 	}
@@ -557,7 +550,7 @@
 		}
 	}
 }
-/* iPhone 4 */
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
 	.position-top-vh-100 {
@@ -635,7 +628,7 @@
 			height: 480px;
 		}
 	}
-}
+}*/
 
 /** 
  * iPad with portrait orientation.
