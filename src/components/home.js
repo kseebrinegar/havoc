@@ -175,14 +175,16 @@ class Home extends Component {
     }
     componentDidMount() {
         
+        const homeSectionSlideShow = document.getElementsByClassName('home__section--slide-show');
+
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
         }, 500, { 'trailing': false });
 
-        document.addEventListener("touchstart", this.swipeEvent);
-        document.addEventListener("touchmove", this.swipeEvent);
-        document.addEventListener("touchend", (e) => {
+        homeSectionSlideShow[0].addEventListener("touchstart", this.swipeEvent);
+        homeSectionSlideShow[0].addEventListener("touchmove", this.swipeEvent);
+        homeSectionSlideShow[0].addEventListener("touchend", (e) => {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
         });
 
