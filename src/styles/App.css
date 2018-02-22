@@ -12,6 +12,7 @@
 - normal styles: [1200 - 1800px] is where normal styles apply
 - big-desktop: 1800px +
 */
+@import url(../../node_modules/video-react/dist/video-react.css);
 html, body {
   overflow: hidden;
   width: 100%;
@@ -213,7 +214,14 @@ table {
   .home__section--slide-show .home__section--slide-show__content {
     position: relative;
     transition: .5s;
-    transition-timing-function: ease-out; }
+    transition-timing-function: ease-out;
+    width: 100%; }
+    .home__section--slide-show .home__section--slide-show__content--container1 .video, .home__section--slide-show .home__section--slide-show__content--container2 .video, .home__section--slide-show .home__section--slide-show__content--container3 .video, .home__section--slide-show .home__section--slide-show__content--container4 .video {
+      position: absolute;
+      width: 400px;
+      height: 200px;
+      right: 0%;
+      top: 0px; }
     @media (min-width: 1800px) {
       .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
         font-size: 18px; } }
@@ -379,7 +387,14 @@ table {
   .home__section--slide-show .home__section--slide-show__content {
     position: relative;
     transition: .5s;
-    transition-timing-function: ease-out; }
+    transition-timing-function: ease-out;
+    width: 100%; }
+    .home__section--slide-show .home__section--slide-show__content--container1 .video, .home__section--slide-show .home__section--slide-show__content--container2 .video, .home__section--slide-show .home__section--slide-show__content--container3 .video, .home__section--slide-show .home__section--slide-show__content--container4 .video {
+      position: absolute;
+      width: 400px;
+      height: 200px;
+      right: 0%;
+      top: 0px; }
     @media (min-width: 1800px) {
       .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
         font-size: 18px; } }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Player } from 'video-react';
-import "node_modules/video-react/dist/video-react.css";
+
 
 class Home extends Component {
 	constructor() {
@@ -247,11 +247,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <Player
-      playsInline
-      poster="/assets/poster.png"
-      src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-    />
+                                <Player className="video" playsInline poster="/assets/poster.png" src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> 
                             </div>
                              <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
                                 <p>About.</p>

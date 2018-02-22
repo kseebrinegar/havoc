@@ -165,8 +165,17 @@
 		position: relative;
 		transition: .5s;
 		transition-timing-function: ease-out;
+		width: 100%;
 
 		&--container1, &--container2, &--container3, &--container4 {
+
+			.video {
+				position: absolute;
+				width: 400px;
+				height: 200px;
+				right: 0%;
+				top: 0px;
+			}
 
 			p:first-of-type {
 
