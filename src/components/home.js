@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import uuid from 'uuid';
 
 class Home extends Component {
 	constructor() {
@@ -123,13 +122,11 @@ class Home extends Component {
                     4: (this.state.counter - 1) === 4 ? 'fade-in' : 'fade-out'
                 }
             });
-        }
-        
+        }      
     }
     swipeEvent(e) {
  
         if (e.type === 'touchstart') {
-            e.preventDefault();
             this.changeState({
                 touchStart: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -142,7 +139,7 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-            e.preventDefault();
+            
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                  backgroundImg: {
@@ -152,6 +149,7 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
+
             e.preventDefault();
         } 
     }
@@ -177,7 +175,6 @@ class Home extends Component {
     }
     componentDidMount() {
         
-        const self = this;
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
@@ -185,8 +182,8 @@ class Home extends Component {
 
         document.addEventListener("touchstart", this.swipeEvent);
         document.addEventListener("touchmove", this.swipeEvent);
-        document.addEventListener("touchend", function(e) {
-            throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50));
+        document.addEventListener("touchend", (e) => {
+            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
         });
 
         window.addEventListener("keydown", function(e) { // for key events
@@ -213,10 +210,10 @@ class Home extends Component {
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
                 windowHeight: window.innerHeight,
                 backgroundImg: {
-                    1: 'fade-in',
-                    2: 'fade-out',
-                    3: 'fade-out',
-                    4: 'fade-out'
+                    1: this.state.backgroundImg[1],
+                    2: this.state.backgroundImg[2],
+                    3: this.state.backgroundImg[3],
+                    4: this.state.backgroundImg[4],
                 }
             });  
 		}, 1000);
@@ -241,32 +238,32 @@ class Home extends Component {
    					<p className="home__section--slide-show__bottom-border"></p>
                 	<div className="home__section--slide-show__content" style={{height: this.state.windowHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
                         <div className="home__section--slide-show__content--container1" style={{height: this.state.windowHeight}}>
-                    		<p>News.</p>
+                    		<p>Work.</p>
                     		<h3>We're tight.</h3>
                     		<p className="home__section--slide-show__content__border-line"></p>
                     		<p>America's leading legware brand No Nonesense names Havoc 
-                    		Agency of Record</p>
+                    		Agency of Record.</p>
                         </div>
                          <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
-                            <p>News.</p>
-                            <h3>We're tight.</h3>
+                            <p>About.</p>
+                            <h3>Meet The Translator.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
-                            <p>America's leading legware brand No Nonesense names Havoc 
-                            Agency of Record</p>
+                            <p>Havoc & Quicken Loans make the comples super simple with a 
+                            new commercial for Rocket Mortgage.</p>
                         </div>
                          <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
-                            <p>News.</p>
+                            <p>Carreers.</p>
                             <h3>We're tight.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
                             <p>America's leading legware brand No Nonesense names Havoc 
                             Agency of Record</p>
                         </div>
                          <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
-                            <p>News.</p>
-                            <h3>We're tight.</h3>
+                            <p>Contact.</p>
+                            <h3>What matters now.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
-                            <p>America's leading legware brand No Nonesense names Havoc 
-                            Agency of Record</p>
+                            <p>Huge partnered with America's leading banks to create & launch Zelle, 
+                            the best way to send & receive money.</p>
                         </div>
                 	</div>
                     <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>

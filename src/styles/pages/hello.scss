@@ -11,18 +11,6 @@
 	top: 0;
 }
 
-/*.position-top-vh-100 {
-	top: -100vh;
-	transition-timing-function: ease-out;
-	transition: .5s;
-}
-
-.position-top-vh-0 {
-	top: 0vh;
-	transition: .5s;
-	transition-timing-function: ease-out;
-}*/
-
 .home__section--havoc {
 	background: white;
 	display: flex;
@@ -191,6 +179,7 @@
 		h3 {
 			margin-top: 10vh;
 			font-size: 72px;
+			max-width: 400px;
 
 			@include respond(phone) {
 				margin-top: 0vh;

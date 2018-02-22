@@ -14,17 +14,6 @@
   transition-timing-function: ease-out;
   top: 0; }
 
-/*.position-top-vh-100 {
-	top: -100vh;
-	transition-timing-function: ease-out;
-	transition: .5s;
-}
-
-.position-top-vh-0 {
-	top: 0vh;
-	transition: .5s;
-	transition-timing-function: ease-out;
-}*/
 .home__section--havoc {
   background: white;
   display: flex;
@@ -144,7 +133,8 @@
         font-size: 18px; } }
     .home__section--slide-show .home__section--slide-show__content h3 {
       margin-top: 10vh;
-      font-size: 72px; }
+      font-size: 72px;
+      max-width: 400px; }
       @media (max-width: 600px) {
         .home__section--slide-show .home__section--slide-show__content h3 {
           margin-top: 0vh; } }
