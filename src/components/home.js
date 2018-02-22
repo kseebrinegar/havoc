@@ -129,7 +129,7 @@ class Home extends Component {
     swipeEvent(e) {
  
         if (e.type === 'touchstart') {
-        
+            e.preventDefault();
             this.changeState({
                 touchStart: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -142,7 +142,7 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-
+            e.preventDefault();
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                  backgroundImg: {
@@ -156,6 +156,7 @@ class Home extends Component {
         } 
     }
     resizeEvent() {
+
         this.changeState({
             animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
             animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
@@ -173,7 +174,6 @@ class Home extends Component {
             touchStart: null,
             touchMove: null
         });
-        console.log(this.state.windowHeight)
     }
     componentDidMount() {
         
@@ -206,8 +206,6 @@ class Home extends Component {
     }
 	componentWillMount() {
 
-        const self = this;
-
 		setTimeout(() => {
 
             this.changeState({
@@ -223,8 +221,8 @@ class Home extends Component {
             });  
 		}, 1000);
 
-        window.addEventListener('resize', function(e) {
-            self.resizeEvent();
+        window.addEventListener('resize', (e) => {
+            this.resizeEvent();
         });
 	}
     render() {
