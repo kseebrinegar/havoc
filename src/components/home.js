@@ -175,23 +175,15 @@ class Home extends Component {
     }
     componentDidMount() {
         
-        const homeSectionSlideShow = document.getElementsByClassName('home__section--slide-show');
-        const homeSectionHavoc = document.getElementsByClassName('home__section--havoc');
-
+        const swipeContainerMobile = document.getElementById('swipe-container-mobile')
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
         }, 500, { 'trailing': false });
 
-        homeSectionSlideShow[0].addEventListener("touchstart", this.swipeEvent);
-        homeSectionSlideShow[0].addEventListener("touchmove", this.swipeEvent);
-        homeSectionSlideShow[0].addEventListener("touchend", (e) => {
-            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
-        });
-
-        homeSectionHavoc[0].addEventListener("touchstart", this.swipeEvent);
-        homeSectionHavoc[0].addEventListener("touchmove", this.swipeEvent);
-        homeSectionHavoc[0].addEventListener("touchend", (e) => {
+        swipeContainerMobile.addEventListener("touchstart", this.swipeEvent);
+        swipeContainerMobile.addEventListener("touchmove", this.swipeEvent);
+        swipeContainerMobile.addEventListener("touchend", (e) => {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
         });
 
@@ -235,51 +227,53 @@ class Home extends Component {
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
-                <section className="home__section--havoc" style={{height: this.state.windowHeight + 'px'}}>
-                	<h1 className="home__section--havoc__title">Havoc</h1>
-                	<div className="home__section--havoc__animation-container">
-                		<p className={this.state.animationPara}>Today at Havoc</p>
-                		<p className={this.state.animationLine}></p>
-                	</div>
-                </section>
-                <section className="home__section--slide-show" style={{height: this.state.windowHeight + 'px', paddingTop: this.state.windowHeight + 'px'}}>
-                	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
-   					<p className="home__section--slide-show__bottom-border"></p>
-                	<div className="home__section--slide-show__content" style={{height: this.state.windowHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
-                        <div className="home__section--slide-show__content--container1" style={{height: this.state.windowHeight}}>
-                    		<p>Work.</p>
-                    		<h3>We're tight.</h3>
-                    		<p className="home__section--slide-show__content__border-line"></p>
-                    		<p>America's leading legware brand No Nonesense names Havoc 
-                    		Agency of Record.</p>
-                        </div>
-                         <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
-                            <p>About.</p>
-                            <h3>Meet The Translator.</h3>
-                            <p className="home__section--slide-show__content__border-line"></p>
-                            <p>Havoc & Quicken Loans make the comples super simple with a 
-                            new commercial for Rocket Mortgage.</p>
-                        </div>
-                         <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
-                            <p>Carreers.</p>
-                            <h3>We're tight.</h3>
-                            <p className="home__section--slide-show__content__border-line"></p>
-                            <p>America's leading legware brand No Nonesense names Havoc 
-                            Agency of Record</p>
-                        </div>
-                         <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
-                            <p>Contact.</p>
-                            <h3>What matters now.</h3>
-                            <p className="home__section--slide-show__content__border-line"></p>
-                            <p>Huge partnered with America's leading banks to create & launch Zelle, 
-                            the best way to send & receive money.</p>
-                        </div>
-                	</div>
-                    <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>
-                    <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img-2"} style={{height: this.state.windowHeight + 'px'}}></div>
-                    <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img-3"} style={{height: this.state.windowHeight + 'px'}}></div>
-                    <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img-4"} style={{height: this.state.windowHeight + 'px'}}></div>
-                </section>
+                <div id="swipe-container-mobile">
+                    <section className="home__section--havoc" style={{height: this.state.windowHeight + 'px'}}>
+                    	<h1 className="home__section--havoc__title">Havoc</h1>
+                    	<div className="home__section--havoc__animation-container">
+                    		<p className={this.state.animationPara}>Today at Havoc</p>
+                    		<p className={this.state.animationLine}></p>
+                    	</div>
+                    </section>
+                    <section className="home__section--slide-show" style={{height: this.state.windowHeight + 'px', paddingTop: this.state.windowHeight + 'px'}}>
+                    	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
+       					<p className="home__section--slide-show__bottom-border"></p>
+                    	<div className="home__section--slide-show__content" style={{height: this.state.windowHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
+                            <div className="home__section--slide-show__content--container1" style={{height: this.state.windowHeight}}>
+                        		<p>Work.</p>
+                        		<h3>We're tight.</h3>
+                        		<p className="home__section--slide-show__content__border-line"></p>
+                        		<p>America's leading legware brand No Nonesense names Havoc 
+                        		Agency of Record.</p>
+                            </div>
+                             <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
+                                <p>About.</p>
+                                <h3>Meet The Translator.</h3>
+                                <p className="home__section--slide-show__content__border-line"></p>
+                                <p>Havoc & Quicken Loans make the comples super simple with a 
+                                new commercial for Rocket Mortgage.</p>
+                            </div>
+                             <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
+                                <p>Carreers.</p>
+                                <h3>We're tight.</h3>
+                                <p className="home__section--slide-show__content__border-line"></p>
+                                <p>America's leading legware brand No Nonesense names Havoc 
+                                Agency of Record</p>
+                            </div>
+                             <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
+                                <p>Contact.</p>
+                                <h3>What matters now.</h3>
+                                <p className="home__section--slide-show__content__border-line"></p>
+                                <p>Huge partnered with America's leading banks to create & launch Zelle, 
+                                the best way to send & receive money.</p>
+                            </div>
+                    	</div>
+                        <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>
+                        <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img-2"} style={{height: this.state.windowHeight + 'px'}}></div>
+                        <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img-3"} style={{height: this.state.windowHeight + 'px'}}></div>
+                        <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img-4"} style={{height: this.state.windowHeight + 'px'}}></div>
+                    </section>
+                </div>
             </div>
         )
     }
