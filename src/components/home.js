@@ -8,10 +8,12 @@ class Home extends Component {
         this.scrollToSection = this.scrollToSection.bind(this);
         this.changeState = this.changeState.bind(this);
         this.swipeEvent = this.swipeEvent.bind(this);
+        this.resizeEvent = this.resizeEvent.bind(this);
 		this.state = {
 			animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
 			animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
-            homeScrollDown: 'home',
+            homeScrollDown: 0,
+            windowHeight: window.innerHeight,
             backgroundImg: {
                 1: 'fade-in',
                 2: 'fade-out',
@@ -26,7 +28,7 @@ class Home extends Component {
 		}
 	}
     changeState(changeState) {
-        
+    
         this.setState((preveState) => {
 
             return {
@@ -43,18 +45,19 @@ class Home extends Component {
                     4: changeState.backgroundImg[4] !== undefined ? changeState.backgroundImg[4] : preveState.backgroundImg[4],
                },
                touchStart: changeState.touchStart !== undefined ? changeState.touchStart : preveState.touchStart,
-               touchMove: changeState.touchMove !== undefined ? changeState.touchMove : preveState.touchMove
+               touchMove: changeState.touchMove !== undefined ? changeState.touchMove : preveState.touchMove,
+               windowHeight: changeState.windowHeight !== undefined ? changeState.windowHeight : preveState.windowHeight
             }
         });
     }
     scrollToSection(e, express1, express2) {
-   
+  
         if (express1 && this.state.isUserAtTopOfPage) {
 
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
-                homeScrollDown: 'home position-top-vh-100',
+                homeScrollDown: - this.state.windowHeight,
                 isUserAtTopOfPage: false,
                 touchMove: null,
                 touchStart: null,
@@ -72,7 +75,7 @@ class Home extends Component {
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
-                homeScrollDown: 'home position-top-vh-0',
+                homeScrollDown: 0,
                 isUserAtTopOfPage: true,
                 touchMove: null,
                 touchStart: null,
@@ -93,7 +96,7 @@ class Home extends Component {
             }
 
             this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition -100,
+                slideShowContentPosition: this.state.slideShowContentPosition - (this.state.windowHeight),
                 counter: this.state.counter + 1,
                 touchMove: null,
                 touchStart: null,
@@ -109,7 +112,7 @@ class Home extends Component {
         } else if (express2 && !this.state.isUserAtTopOfPage) {
 
             this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition + 100,
+                slideShowContentPosition: this.state.slideShowContentPosition + (this.state.windowHeight),
                 counter: this.state.counter - 1,
                 touchMove: null,
                 touchStart: null,
@@ -150,14 +153,23 @@ class Home extends Component {
                 }
             });
             e.preventDefault();
-
         } 
+    }
+    resizeEvent() {
+
+        this.changeState({
+            windowHeight: window.innerHeight,
+            backgroundImg: {
+                1: this.state.backgroundImg[1],
+                2: this.state.backgroundImg[2],
+                3: this.state.backgroundImg[3],
+                4: this.state.backgroundImg[4],
+            }
+        });
     }
     componentDidMount() {
         
         const self = this;
-        //const rootBody = document.getElementById('root');
-
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
@@ -166,7 +178,7 @@ class Home extends Component {
         document.addEventListener("touchstart", this.swipeEvent);
         document.addEventListener("touchmove", this.swipeEvent);
         document.addEventListener("touchend", function(e) {
-            throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50) );
+            throttleFunction(e, self.state.touchMove < Number(self.state.touchStart - 50) , self.state.touchMove > Number(self.state.touchStart + 50));
         });
 
         window.addEventListener("keydown", function(e) { // for key events
@@ -185,11 +197,13 @@ class Home extends Component {
         }); // IE 6/7/8
     }
 	componentWillMount() {
+
 		setTimeout(() => {
 
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
+                windowHeight: window.innerHeight,
                 backgroundImg: {
                     1: 'fade-in',
                     2: 'fade-out',
@@ -198,43 +212,47 @@ class Home extends Component {
                 }
             });  
 		}, 1000);
+
+        window.addEventListener('resize', function(e) {
+            this.resizeEvent;
+        });
 	}
     render() {
         return (
-            <div className={this.state.homeScrollDown}>
-                <section className="home__section--havoc">
+            <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
+                <section className="home__section--havoc" style={{height: this.state.windowHeight + 'px'}}>
                 	<h1 className="home__section--havoc__title">Havoc</h1>
                 	<div className="home__section--havoc__animation-container">
                 		<p className={this.state.animationPara}>Today at Havoc</p>
                 		<p className={this.state.animationLine}></p>
                 	</div>
                 </section>
-                <section className="home__section--slide-show">
+                <section className="home__section--slide-show" style={{height: this.state.windowHeight + 'px', paddingTop: this.state.windowHeight + 'px'}}>
                 	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
    					<p className="home__section--slide-show__bottom-border"></p>
-                	<div className="home__section--slide-show__content" style={{top: this.state.slideShowContentPosition + 'vh'}}>
-                        <div className="home__section--slide-show__content--container1">
+                	<div className="home__section--slide-show__content" style={{height: this.state.windowHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
+                        <div className="home__section--slide-show__content--container1" style={{height: this.state.windowHeight}}>
                     		<p>News.</p>
                     		<h3>We're tight.</h3>
                     		<p className="home__section--slide-show__content__border-line"></p>
                     		<p>America's leading legware brand No Nonesense names Havoc 
                     		Agency of Record</p>
                         </div>
-                         <div className="home__section--slide-show__content--container2">
+                         <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
                             <p>News.</p>
                             <h3>We're tight.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
                             <p>America's leading legware brand No Nonesense names Havoc 
                             Agency of Record</p>
                         </div>
-                         <div className="home__section--slide-show__content--container3">
+                         <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
                             <p>News.</p>
                             <h3>We're tight.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
                             <p>America's leading legware brand No Nonesense names Havoc 
                             Agency of Record</p>
                         </div>
-                         <div className="home__section--slide-show__content--container4">
+                         <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
                             <p>News.</p>
                             <h3>We're tight.</h3>
                             <p className="home__section--slide-show__content__border-line"></p>
@@ -242,10 +260,10 @@ class Home extends Component {
                             Agency of Record</p>
                         </div>
                 	</div>
-                    <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"}></div>
-                    <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img-2"}></div>
-                    <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img-3"}></div>
-                    <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img-4"}></div>
+                    <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>
+                    <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img-2"} style={{height: this.state.windowHeight + 'px'}}></div>
+                    <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img-3"} style={{height: this.state.windowHeight + 'px'}}></div>
+                    <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img-4"} style={{height: this.state.windowHeight + 'px'}}></div>
                 </section>
             </div>
         )
