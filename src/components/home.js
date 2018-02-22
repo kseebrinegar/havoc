@@ -176,6 +176,7 @@ class Home extends Component {
     componentDidMount() {
         
         const homeSectionSlideShow = document.getElementsByClassName('home__section--slide-show');
+        const homeSectionHavoc = document.getElementsByClassName('home__section--havoc');
 
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
@@ -185,6 +186,12 @@ class Home extends Component {
         homeSectionSlideShow[0].addEventListener("touchstart", this.swipeEvent);
         homeSectionSlideShow[0].addEventListener("touchmove", this.swipeEvent);
         homeSectionSlideShow[0].addEventListener("touchend", (e) => {
+            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
+        });
+
+        homeSectionHavoc[0].addEventListener("touchstart", this.swipeEvent);
+        homeSectionHavoc[0].addEventListener("touchmove", this.swipeEvent);
+        homeSectionHavoc[0].addEventListener("touchend", (e) => {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
         });
 
