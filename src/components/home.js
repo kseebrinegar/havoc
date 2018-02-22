@@ -156,16 +156,24 @@ class Home extends Component {
         } 
     }
     resizeEvent() {
-
         this.changeState({
+            animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
+            animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
+            homeScrollDown: 0,
             windowHeight: window.innerHeight,
             backgroundImg: {
-                1: this.state.backgroundImg[1],
-                2: this.state.backgroundImg[2],
-                3: this.state.backgroundImg[3],
-                4: this.state.backgroundImg[4],
-            }
+                1: 'fade-in',
+                2: 'fade-out',
+                3: 'fade-out',
+                4: 'fade-out'
+            },
+            slideShowContentPosition: 0,
+            isUserAtTopOfPage: true,
+            counter: 1,
+            touchStart: null,
+            touchMove: null
         });
+        console.log(this.state.windowHeight)
     }
     componentDidMount() {
         
@@ -198,6 +206,8 @@ class Home extends Component {
     }
 	componentWillMount() {
 
+        const self = this;
+
 		setTimeout(() => {
 
             this.changeState({
@@ -214,10 +224,11 @@ class Home extends Component {
 		}, 1000);
 
         window.addEventListener('resize', function(e) {
-            this.resizeEvent;
+            self.resizeEvent();
         });
 	}
     render() {
+
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
                 <section className="home__section--havoc" style={{height: this.state.windowHeight + 'px'}}>
