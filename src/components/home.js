@@ -229,7 +229,7 @@ class Home extends Component {
 	}
     render() {
 
-        var videoHeight = (window.innerHeight  / 100) * 40;
+        var videoHeight = (window.innerHeight  / 100) * 35;
      
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
