@@ -251,7 +251,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <div className="video" style={{height: '40%'}}>
+                                <div className="video" style={{videoHeight}}>
                                     <Player playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
