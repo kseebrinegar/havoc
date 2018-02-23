@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { Player } from 'video-react';
 
-
 class Home extends Component {
 	constructor() {
 		super()
