@@ -228,8 +228,8 @@ class Home extends Component {
         });*/
 	}
     render() {
-        let videoHeight = window.innerWidth <= 740 ? (window.innerHeight  / 100) * 32 + 'px' : '100%';
-     
+       // let videoHeight = window.innerWidth <= 740 ? (window.outerHeight  / 100) * 40 + 'px' : '100%';
+        let videoHeight =  (window.outerHeight  / 100) * 40 ;
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
                 <div id="swipe-container-mobile">
