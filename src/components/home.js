@@ -229,6 +229,8 @@ class Home extends Component {
 	}
     render() {
 
+        var videoHeight = (window.innerHeight  / 100) * 40;
+     
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
                 <div id="swipe-container-mobile">
@@ -249,7 +251,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <div className="video">
+                                <div className="video" style={{height: videoHeight + 'px'}}>
                                     <Player fluid={true} height={800} width={800} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -267,7 +269,7 @@ class Home extends Component {
                                 <p>America's leading legware brand No Nonesense names Havoc 
                                 Agency of Record</p>
                                 <div className="video">
-                                    <Player fluid={false} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
+                                    <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
                              <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
