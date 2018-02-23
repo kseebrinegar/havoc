@@ -15,6 +15,8 @@ class Home extends Component {
 			animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
             homeScrollDown: 0,
             windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
+            smallScreenResponsiveVideo: window.innerWidth <= 740 ? false : true,
             backgroundImg: {
                 1: 'fade-in',
                 2: 'fade-out',
@@ -47,7 +49,8 @@ class Home extends Component {
                },
                touchStart: changeState.touchStart !== undefined ? changeState.touchStart : preveState.touchStart,
                touchMove: changeState.touchMove !== undefined ? changeState.touchMove : preveState.touchMove,
-               windowHeight: changeState.windowHeight !== undefined ? changeState.windowHeight : preveState.windowHeight
+               windowHeight: changeState.windowHeight !== undefined ? changeState.windowHeight : preveState.windowHeight,
+               windowWidth: changeState.windowWidth !== undefined ? changeState.windowWidth : preveState.windowWidth
             }
         });
     }
@@ -156,12 +159,14 @@ class Home extends Component {
         } 
     }
     resizeEvent() {
-
+        console.log(window.innerWidth <= 740)
         this.changeState({
             animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
             animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
             homeScrollDown: 0,
             windowHeight: window.innerHeight,
+            windowWidth: window.innerWidth,
+            smallScreenResponsiveVideo: window.innerWidth <= 740 ? false : true,
             backgroundImg: {
                 1: 'fade-in',
                 2: 'fade-out',
@@ -205,13 +210,11 @@ class Home extends Component {
         }); // IE 6/7/8
     }
 	componentWillMount() {
-
 		setTimeout(() => {
 
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
-                windowHeight: window.innerHeight,
                 backgroundImg: {
                     1: this.state.backgroundImg[1],
                     2: this.state.backgroundImg[2],
@@ -226,6 +229,7 @@ class Home extends Component {
         });
 	}
     render() {
+       const videoHeight = Number(this.state.windowHeight) / 2.9;
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
@@ -247,7 +251,9 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <Player className="video" playsInline poster="/assets/poster.png" src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> 
+                                <div className="video">
+                                    <Player fluid={this.state.smallScreenResponsiveVideo} height={videoHeight} width={this.state.windowWidth + 'px'} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
+                                </div> 
                             </div>
                              <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
                                 <p>About.</p>

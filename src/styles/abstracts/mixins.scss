@@ -34,6 +34,11 @@
 			@content
 		}
 	}
+	@if $breakpoint == videoplayer {
+		@media (max-width: 740px) {
+			@content
+		}
+	}
 	@if $breakpoint == tab-port {
 		@media (max-width: 900px) {
 			@content
