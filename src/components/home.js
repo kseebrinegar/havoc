@@ -223,12 +223,12 @@ class Home extends Component {
             });  
 		}, 1000);
 
-        window.addEventListener('resize', (e) => {
+        /*window.addEventListener('resize', (e) => {
             this.resizeEvent();
-        });
+        });*/
 	}
     render() {
-       const videoHeight = Number(this.state.windowHeight) / 2.9;
+       const videoHeight = Number(this.state.windowHeight) / 3;
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
@@ -251,7 +251,7 @@ class Home extends Component {
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
                                 <div className="video">
-                                    <Player fluid={this.state.smallScreenResponsiveVideo} height={videoHeight} width={this.state.windowWidth + 'px'} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
+                                    <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
                              <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>

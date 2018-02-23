@@ -97,10 +97,6 @@
 	.home__section--slide-show__counter {
 		padding-left: 4%;
 
-		@include respond(tab-port) {
-			padding-left: 50px;
-		}
-
 		@include respond(big-desktop) {
 			font-size: 18px;
 		}
@@ -127,10 +123,8 @@
 		width: 100%;
 		padding-right: 4%;
 		
-
 		@include respond(tab-port) {
 			margin-left: -80px;
-			padding-right: 50px;
 		}
 		
 		&--container1, &--container2, &--container3, &--container4 {
@@ -154,7 +148,7 @@
 				.video {
 					position: static;
 					width: 100%;
-					margin-top: 50px;
+					margin-top: 25px;
 				}
 			}
 
