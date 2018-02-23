@@ -128,7 +128,8 @@
 		}
 		
 		&--container1, &--container2, &--container3, &--container4 {
-		
+			position: relative;
+
 			.video {
 				position: absolute;
 				overflow: hidden;
@@ -140,16 +141,17 @@
 
 			@include respond(tab-port) {
 				.video {
-					position: absolute;
 					top: 50px;
 				}
 			}
 
 			@include respond(videoplayer) {
 				.video {
-					position: static;
+					position: absolute;
 					width: 100%;
-					margin-top: 25px;
+					top: 40vh;
+					left: 0%;
+					height: 40vh;
 				}
 			}
 

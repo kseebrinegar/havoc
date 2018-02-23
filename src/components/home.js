@@ -180,7 +180,7 @@ class Home extends Component {
         });
     }
     componentDidMount() {
-        
+
         const swipeContainerMobile = document.getElementById('swipe-container-mobile')
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
@@ -228,7 +228,6 @@ class Home extends Component {
         });*/
 	}
     render() {
-       const videoHeight = Number(this.state.windowHeight) * 0.65;
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
@@ -250,7 +249,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight - 25) - videoHeight +  'px'}}>
+                                <div className="video">
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -260,9 +259,6 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>Havoc & Quicken Loans make the comples super simple with a 
                                 new commercial for Rocket Mortgage.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight - 25) - videoHeight +  'px'}}>
-                                    <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
-                                </div> 
                             </div>
                              <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
                                 <p>Carreers.</p>
@@ -270,7 +266,7 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>America's leading legware brand No Nonesense names Havoc 
                                 Agency of Record</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight - 25) - videoHeight +  'px'}}>
+                                <div className="video">
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -280,9 +276,6 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>Huge partnered with America's leading banks to create & launch Zelle, 
                                 the best way to send & receive money.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight - 25) - videoHeight +  'px'}}>
-                                    <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
-                                </div> 
                             </div>
                     	</div>
                         <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>
