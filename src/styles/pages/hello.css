@@ -105,8 +105,7 @@
         left: 56%;
         top: 75px;
         height: 40%;
-        width: 40%;
-        background: red; }
+        width: 40%; }
       @media (max-width: 900px) {
         .home__section--slide-show .home__section--slide-show__content--container1 .video, .home__section--slide-show .home__section--slide-show__content--container2 .video, .home__section--slide-show .home__section--slide-show__content--container3 .video, .home__section--slide-show .home__section--slide-show__content--container4 .video {
           top: 50px; } }
@@ -115,7 +114,8 @@
           position: absolute;
           width: 100%;
           top: 40vh;
-          left: 0%; } }
+          left: 0%;
+          height: 40%; } }
       @media (min-width: 1800px) {
         .home__section--slide-show .home__section--slide-show__content--container1 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container2 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container3 p:first-of-type, .home__section--slide-show .home__section--slide-show__content--container4 p:first-of-type {
           font-size: 18px; } }
