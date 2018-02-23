@@ -250,7 +250,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight + 25) - videoHeight +  'px'}}>
+                                <div className="video" style={{height: Number(this.state.windowHeight) - videoHeight +  'px'}}>
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -260,7 +260,7 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>Havoc & Quicken Loans make the comples super simple with a 
                                 new commercial for Rocket Mortgage.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight + 25) - videoHeight +  'px'}}>
+                                <div className="video" style={{height: Number(this.state.windowHeight) - videoHeight +  'px'}}>
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -270,7 +270,7 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>America's leading legware brand No Nonesense names Havoc 
                                 Agency of Record</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight + 25) - videoHeight +  'px'}}>
+                                <div className="video" style={{height: Number(this.state.windowHeight) - videoHeight +  'px'}}>
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
@@ -280,7 +280,7 @@ class Home extends Component {
                                 <p className="home__section--slide-show__content__border-line"></p>
                                 <p>Huge partnered with America's leading banks to create & launch Zelle, 
                                 the best way to send & receive money.</p>
-                                <div className="video" style={{height: Number(this.state.windowHeight + 25) - videoHeight +  'px'}}>
+                                <div className="video" style={{height: Number(this.state.windowHeight) - videoHeight +  'px'}}>
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>
