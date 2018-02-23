@@ -158,7 +158,7 @@ class Home extends Component {
         } 
     }
     resizeEvent() {
-        console.log(window.innerWidth <= 740)
+
         this.changeState({
             animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
             animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
@@ -228,7 +228,7 @@ class Home extends Component {
         });*/
 	}
     render() {
-       const videoHeight = Number(this.state.windowHeight) / 3;
+       const videoHeight = Number(this.state.windowHeight) * 0.65;
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
@@ -250,7 +250,7 @@ class Home extends Component {
                         		<p className="home__section--slide-show__content__border-line"></p>
                         		<p>America's leading legware brand No Nonesense names Havoc 
                         		Agency of Record.</p>
-                                <div className="video">
+                                <div className="video" style={{height: Number(this.state.windowHeight + 50) - videoHeight +  'px'}}>
                                     <Player fluid={true} height={400} width={400} playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
                                 </div> 
                             </div>

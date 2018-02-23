@@ -186,6 +186,7 @@ table {
         margin-left: -80px; } }
     .home__section--slide-show .home__section--slide-show__content--container1 .video, .home__section--slide-show .home__section--slide-show__content--container2 .video, .home__section--slide-show .home__section--slide-show__content--container3 .video, .home__section--slide-show .home__section--slide-show__content--container4 .video {
       position: absolute;
+      overflow: hidden;
       left: 56%;
       top: 75px;
       height: 40%;
@@ -376,6 +377,7 @@ table {
         margin-left: -80px; } }
     .home__section--slide-show .home__section--slide-show__content--container1 .video, .home__section--slide-show .home__section--slide-show__content--container2 .video, .home__section--slide-show .home__section--slide-show__content--container3 .video, .home__section--slide-show .home__section--slide-show__content--container4 .video {
       position: absolute;
+      overflow: hidden;
       left: 56%;
       top: 75px;
       height: 40%;
