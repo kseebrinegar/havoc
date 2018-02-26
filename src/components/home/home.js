@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import _ from 'lodash';
-import { Player } from 'video-react';
+import SlideShowContainer from './slideShowContainer';
 
 class Home extends Component {
 	constructor() {
@@ -13,9 +13,6 @@ class Home extends Component {
 			animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
 			animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
             homeScrollDown: 0,
-            windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth,
-            smallScreenResponsiveVideo: window.innerWidth <= 740 ? false : true,
             backgroundImg: {
                 1: 'fade-in',
                 2: 'fade-out',
@@ -26,7 +23,8 @@ class Home extends Component {
             isUserAtTopOfPage: true,
             counter: 1,
             touchStart: null,
-            touchMove: null
+            touchMove: null,
+            playButtonHeight: null,
 		}
 	}
     changeState(changeState) {
@@ -48,8 +46,7 @@ class Home extends Component {
                },
                touchStart: changeState.touchStart !== undefined ? changeState.touchStart : preveState.touchStart,
                touchMove: changeState.touchMove !== undefined ? changeState.touchMove : preveState.touchMove,
-               windowHeight: changeState.windowHeight !== undefined ? changeState.windowHeight : preveState.windowHeight,
-               windowWidth: changeState.windowWidth !== undefined ? changeState.windowWidth : preveState.windowWidth
+               playButtonHeight: changeState.playButtonHeight !== undefined ? changeState.playButtonHeight : preveState.playButtonHeight,
             }
         });
     }
@@ -60,7 +57,7 @@ class Home extends Component {
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
                 animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
-                homeScrollDown: - this.state.windowHeight,
+                homeScrollDown: - window.innerHeight,
                 isUserAtTopOfPage: false,
                 touchMove: null,
                 touchStart: null,
@@ -99,7 +96,7 @@ class Home extends Component {
             }
 
             this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition - (this.state.windowHeight),
+                slideShowContentPosition: this.state.slideShowContentPosition - (window.innerHeight),
                 counter: this.state.counter + 1,
                 touchMove: null,
                 touchStart: null,
@@ -115,7 +112,7 @@ class Home extends Component {
         } else if (express2 && !this.state.isUserAtTopOfPage) {
 
             this.changeState({
-                slideShowContentPosition: this.state.slideShowContentPosition + (this.state.windowHeight),
+                slideShowContentPosition: this.state.slideShowContentPosition + (window.innerHeight),
                 counter: this.state.counter - 1,
                 touchMove: null,
                 touchStart: null,
@@ -146,7 +143,7 @@ class Home extends Component {
             
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
-                 backgroundImg: {
+                backgroundImg: {
                     1: this.state.backgroundImg[1],
                     2: this.state.backgroundImg[2],
                     3: this.state.backgroundImg[3],
@@ -159,13 +156,12 @@ class Home extends Component {
     }
     resizeEvent() {
 
+       const playButton = document.querySelector('video');
+
         this.changeState({
             animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
             animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
             homeScrollDown: 0,
-            windowHeight: window.innerHeight,
-            windowWidth: window.innerWidth,
-            smallScreenResponsiveVideo: window.innerWidth <= 740 ? false : true,
             backgroundImg: {
                 1: 'fade-in',
                 2: 'fade-out',
@@ -176,12 +172,14 @@ class Home extends Component {
             isUserAtTopOfPage: true,
             counter: 1,
             touchStart: null,
-            touchMove: null
+            touchMove: null,
+            playButtonHeight: (playButton.offsetHeight)
         });
     }
     componentDidMount() {
 
-        const swipeContainerMobile = document.getElementById('swipe-container-mobile')
+        const swipeContainerMobile = document.getElementById('swipe-container-mobile');
+        const playButton = document.querySelector('video');
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
@@ -207,8 +205,19 @@ class Home extends Component {
         window.addEventListener('onmousewheel', function(e) {
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE 6/7/8
+
+        this.changeState({
+            backgroundImg: {
+                1: this.state.backgroundImg[1],
+                2: this.state.backgroundImg[2],
+                3: this.state.backgroundImg[3],
+                4: this.state.backgroundImg[4],
+            },
+            playButtonHeight: (playButton.offsetHeight)
+        });
     }
 	componentWillMount() {
+
 		setTimeout(() => {
 
             this.changeState({
@@ -219,70 +228,88 @@ class Home extends Component {
                     2: this.state.backgroundImg[2],
                     3: this.state.backgroundImg[3],
                     4: this.state.backgroundImg[4],
-                }
+                },
             });  
 		}, 1000);
 
-        /*window.addEventListener('resize', (e) => {
+        window.addEventListener('resize', (e) => {
             this.resizeEvent();
-        });*/
+        });
 	}
     render() {
-        let videoHeight =  (window.innerHeight  / 100) * 40;
-    
+
+        const backgroundImages = {
+            one: 'url(//images.contentful.com/fiz3jwws2um7/woFlGGC3w4YqKmgSKUcUe/b28a430d5fd2d013087e270dbc7c0f0a/translator_Home_LARGE__1_.jpg?w=1600',
+            two: 'url(/img/home/slider2.jpg)',
+            three: 'url(//images.contentful.com/fiz3jwws2um7/3no5OgViEUmiicKSaygcsa/3d784af6b1ab39c7a4da0b1c03a4f747/ZelleSpot_Home_LARGE__1_.jpg?w=1600)',
+            four: 'url(/img/home/slider4.jpg)',
+        }
+        const sectionContainerInfo1 = {
+            info: {
+                about: 'Work.',
+                header: 'Wer\'re tight.',
+                paragraph: 'America\'s leading legware brand No Nonesense names Havoc Agency of Record.'
+            },
+            videoInfo: {
+                videoPoster: '//images.contentful.com/fiz3jwws2um7/5mQmrvVDZCsY6uiKGmWQwa/d93f41bcb8482db75eb9be21132abe1f/translatortvposter.jpg?w=1600',
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov',
+                playButtonHeight: this.state.playButtonHeight
+            }
+        };
+        const sectionContainerInfo2 = {
+            info: {
+                about: 'About.',
+                header: 'Meet The Translator.',
+                paragraph: 'Havoc & Quicken Loans make the comples super simple with a new commercial for Rocket Mortgage.'
+            }
+        };
+        const sectionContainerInfo3 = {
+            info: {
+                about: 'Carreers.',
+                header: 'America.',
+                paragraph: 'America\'s leading legware brand No Nonesense names Havoc Agency of Record.'
+            },
+            videoInfo: {
+                videoPoster: '//images.contentful.com/fiz3jwws2um7/3SFBAMZ4bmiYMoqack028i/8508bd51bfa811f9952d20d801baa70f/zelletvposter.jpg?w=1600',
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/2U7wQroHzyOQuCs88AggmI/af67357f09dbbce046e8232e3dd8782b/WANN0012000H_City_60_Social_1920x1080.mp4',
+                playButtonHeight: this.state.playButtonHeight
+            }
+        };
+        const sectionContainerInfo4 = {
+            info: {
+                about: 'Contact.',
+                header: 'What matters now.',
+                paragraph: 'Huge partnered with America\'s leading banks to create & launch Zelle, the best way to send & receive money.'
+            }
+        };
+
+        const wow = React.Children.map(this.props.children, function(item) {
+            console.log(item)
+        })
+        console.log(wow)
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
                 <div id="swipe-container-mobile">
-                    <section className="home__section--havoc" style={{height: this.state.windowHeight + 'px'}}>
+                    <section className="home__section--havoc" style={{height: window.innerHeight + 'px'}}>
                     	<h1 className="home__section--havoc__title">Havoc</h1>
                     	<div className="home__section--havoc__animation-container">
                     		<p className={this.state.animationPara}>Today at Havoc</p>
                     		<p className={this.state.animationLine}></p>
                     	</div>
                     </section>
-                    <section className="home__section--slide-show" style={{height: this.state.windowHeight + 'px', paddingTop: this.state.windowHeight + 'px'}}>
+                    <section className="home__section--slide-show" style={{height: window.innerHeight + 'px', paddingTop: window.innerHeight + 'px'}}>
                     	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
        					<p className="home__section--slide-show__bottom-border"></p>
-                    	<div className="home__section--slide-show__content" style={{height: this.state.windowHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
-                            <div className="home__section--slide-show__content--container1" style={{height: this.state.windowHeight}}>
-                        		<p>Work.</p>
-                        		<h3>We're tight.</h3>
-                        		<p className="home__section--slide-show__content__border-line"></p>
-                        		<p>America's leading legware brand No Nonesense names Havoc 
-                        		Agency of Record.</p>
-                                <div className="video" style={{videoHeight}}>
-                                    <Player playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
-                                </div> 
-                            </div>
-                             <div className="home__section--slide-show__content--container2" style={{height: this.state.windowHeight}}>
-                                <p>About.</p>
-                                <h3>Meet The Translator.</h3>
-                                <p className="home__section--slide-show__content__border-line"></p>
-                                <p>Havoc & Quicken Loans make the comples super simple with a 
-                                new commercial for Rocket Mortgage.</p>
-                            </div>
-                             <div className="home__section--slide-show__content--container3" style={{height: this.state.windowHeight}}>
-                                <p>Carreers.</p>
-                                <h3>We're tight.</h3>
-                                <p className="home__section--slide-show__content__border-line"></p>
-                                <p>America's leading legware brand No Nonesense names Havoc 
-                                Agency of Record</p>
-                                <div className="video" style={{height: videoHeight}}>
-                                    <Player playsInline poster="/assets/poster.png" src="//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov" />
-                                </div> 
-                            </div>
-                             <div className="home__section--slide-show__content--container4" style={{height: this.state.windowHeight}}>
-                                <p>Contact.</p>
-                                <h3>What matters now.</h3>
-                                <p className="home__section--slide-show__content__border-line"></p>
-                                <p>Huge partnered with America's leading banks to create & launch Zelle, 
-                                the best way to send & receive money.</p>
-                            </div>
+                    	<div className="home__section--slide-show__content" style={{height: window.innerHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
+                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo1} />
+                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo2} />
+                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo3} />
+                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo4} />
                     	</div>
-                        <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img-1"} style={{height: this.state.windowHeight + 'px'}}></div>
-                        <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img-2"} style={{height: this.state.windowHeight + 'px'}}></div>
-                        <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img-3"} style={{height: this.state.windowHeight + 'px'}}></div>
-                        <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img-4"} style={{height: this.state.windowHeight + 'px'}}></div>
+                        <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.one }}></div>
+                        <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.two }}></div>
+                        <div className={this.state.backgroundImg[3] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.three }}></div>
+                        <div className={this.state.backgroundImg[4] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.four }}></div>
                     </section>
                 </div>
             </div>

@@ -1,0 +1,36 @@
+@import '../abstracts/mixins.scss';
+
+.video--home {
+	cursor: pointer;
+	@include position-top-left-width(absolute, 75px, 60%, 40%);
+
+	.video--homeplay__play-button {
+		width: 75px;
+		height: 75px;
+		background: rgba(234,23,140, .7);
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1
+	}
+
+	video {
+		width: 100%;
+	}
+}
+
+@include respond(tab-port) {
+	.video--home {
+		top: 50px;
+	}
+}
+
+@include respond(videoplayer) {
+	.video--home {
+		overflow: hidden;
+		@include position-top-left-width(absolute, 40vh, 0%, 100%);
+	}
+}

@@ -1,0 +1,38 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+.video--home {
+  cursor: pointer;
+  position: absolute;
+  top: 75px;
+  left: 60%;
+  width: 40%; }
+  .video--home .video--homeplay__play-button {
+    width: 75px;
+    height: 75px;
+    background: rgba(234, 23, 140, 0.7);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; }
+  .video--home video {
+    width: 100%; }
+
+@media (max-width: 900px) {
+  .video--home {
+    top: 50px; } }
+
+@media (max-width: 740px) {
+  .video--home {
+    overflow: hidden;
+    position: absolute;
+    top: 40vh;
+    left: 0%;
+    width: 100%; } }

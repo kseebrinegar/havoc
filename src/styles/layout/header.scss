@@ -3,10 +3,8 @@
 
 header {
 	background: $color-page-background;
-	width: 100%;
-	overflow: hidden;
-	position: fixed;
 	z-index: 99;
+	@include height-width-position-overflow(100%, auto, fixed, hidden);
 }
 
 .drop-menu--closed {
@@ -31,8 +29,7 @@ header {
 }
 
 .drop-menu__list {
-	display: flex;
-	justify-content: space-around;
+	@include flexbox-settings(flex, space-around);
 
 	@include respond(tab-port) {
 		justify-content: center;
@@ -45,34 +42,7 @@ header {
 		margin: 150px 0px 50px 0px;
 		flex: 1;
 
-		@include respond(tab-port) {
-			display: flex;
-			justify-content: space-between;
-			padding: 5px 4%;
-			margin: 0px 0px 0px 0px;
-			flex: 0;
-
-			&:first-of-type {
-				margin: 125px 0px 0px 0px;
-			}
-
-			&:hover h2, &:hover p:first-of-type {
-				color: $color-font-light-pink;
-				cursor: pointer;
-				transition: .1s;
-			}
-		}
-
 		h2 {
-			
-			@include respond(big-desktop) {
-				font-size: 42px;
-			}
-
-			@include respond(tab-port) {
-				font-size: 20px;
-				order: -2;
-			}
 
 			font-size: 32px;
 			font-color: $color-font-dark-black;
@@ -82,6 +52,15 @@ header {
 
 			&:hover {
 				color: $color-font-light-pink;
+			}
+
+			@include respond(big-desktop) {
+				font-size: 42px;
+			}
+
+			@include respond(tab-port) {
+				font-size: 20px;
+				order: -2;
 			}
 		}
 
@@ -125,6 +104,23 @@ header {
 				order: -1;
 			}
 		}
+
+		@include respond(tab-port) {
+			@include flexbox-settings(flex, space-around);
+			padding: 5px 4%;
+			margin: 0px 0px 0px 0px;
+			flex: 0;
+
+			&:first-of-type {
+				margin: 125px 0px 0px 0px;
+			}
+
+			&:hover h2, &:hover p:first-of-type {
+				color: $color-font-light-pink;
+				cursor: pointer;
+				transition: .1s;
+			}
+		}
 	}
 }
 
@@ -141,13 +137,13 @@ header {
 }
 
 .hamburgerLogo {
-	@include height-width-position-overflow(75px, 75px, fixed, visible);
 	left: 50%;
 	display: flex;
 	margin: 50px 0px;
 	cursor: pointer;
 	transform: translateX(-50%);
 	z-index: 100;
+	@include height-width-position-overflow(75px, 75px, fixed, visible);
 
 	@include respond(phone) {
 		@include height-width-position-overflow(60px, 60px, fixed, visible);
@@ -178,13 +174,12 @@ header {
 		}
 
 		&_box {
+			-webkit-transform-origin: 150% 100%;
+			-ms-transform-origin: 150% 100%;
 			transform: rotate(-45deg);
-			-webkit-transform-origin: 150% 100%; /* Safari 3-8 */
-			-ms-transform-origin: 150% 100%; /* IE 9 */
-			height: 20px;
-			width: 300px;
 			margin: 0px 0px 100px -125px;
 			animation: logo 3s;
+			@include width-height(300px, 20px);
 
 			&--big {
 				@include hamburgerLogo__animation-container_box(15px, $color-font-light-pink, 35px);
@@ -200,11 +195,11 @@ header {
 @keyframes logo {
 	0% {
 		-webkit-transform-origin: 150% 100%;
-		-ms-transform-origin: 150% 100%; /* IE 9 */
+		-ms-transform-origin: 150% 100%;
 	}
 
 	100% {
 		-webkit-transform-origin: -150% 100%;
-		-ms-transform-origin: -150% 100%; /* IE 9 */
+		-ms-transform-origin: -150% 100%;
 	}
 }

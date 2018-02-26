@@ -20,6 +20,39 @@
 	overflow: $overflow;
 }
 
+@mixin width-height($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin home-animation-havoc-container($opacity) {
+	opacity: $opacity;
+	transition: 1.5s;
+	transition-delay: .5s;
+}
+
+@mixin flexbox-settings($display, $justify) {
+	display: $display;
+	justify-content: $justify;
+}
+
+@mixin letter-spacing-font-size($font, $spacing) {
+	font-size: $font;
+	letter-spacing: $spacing;
+}
+
+@mixin font-size-line-height($font, $line-height) {
+	font-size: $font;
+	line-height: $line-height;
+}
+
+@mixin position-top-left-width($pos, $top, $left, $width) {
+	position: $pos;
+	top: $top;
+	left: $left;
+	width: $width;
+}
+
 /*
 - phone: 0 - 600px
 - tab-port: 600 - 900px:
