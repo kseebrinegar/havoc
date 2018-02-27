@@ -128,11 +128,19 @@ header {
 	&:hover {
 		background: $color-font-light-pink;
 	}
+
+	@media (hover: none) {
+     	color: white
+	}
 }
 
 .hamburger-hover-color--page-background {
 	&:hover {
 		background: $color-page-background;
+	}
+
+	@media (hover: none) {
+     	color: white
 	}
 }
 
