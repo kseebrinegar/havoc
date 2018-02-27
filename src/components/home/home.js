@@ -50,7 +50,7 @@ class Home extends Component {
     }
     scrollToSection(e, express1, express2) {
        
-        /*if (express1 && this.state.isUserAtTopOfPage) {
+        if (express1 && this.state.isUserAtTopOfPage) {
 
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
@@ -88,7 +88,7 @@ class Home extends Component {
            
             return;
         } else if (express1 && !this.state.isUserAtTopOfPage) {
-
+            console.log(express1)
             if (this.state.counter >= 4) {
                 return;
             }
@@ -108,7 +108,7 @@ class Home extends Component {
 
             return;
         } else if (express2 && !this.state.isUserAtTopOfPage) {
-
+            console.log(express2)
             this.changeState({
                 slideShowContentPosition: this.state.slideShowContentPosition + (window.innerHeight),
                 counter: this.state.counter - 1,
@@ -121,7 +121,7 @@ class Home extends Component {
                     4: (this.state.counter - 1) === 4 ? 'fade-in' : 'fade-out'
                 }
             });
-        }   */   
+        }      
     }
     swipeEvent(e) {
       
