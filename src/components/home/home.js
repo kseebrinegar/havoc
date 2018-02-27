@@ -139,7 +139,8 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-        
+
+            e.preventDefault();
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -177,9 +178,17 @@ class Home extends Component {
             this.scrollToSection(e, express1, express2);
            
         }, 500, { 'trailing': false });
+        const throttleFunction2 = _.throttle((e) => {
+            this.swipeEvent(e);
+           
+        }, 500, { 'trailing': false });
 
-        swipeContainerMobile.addEventListener("touchstart", this.swipeEvent);
-        swipeContainerMobile.addEventListener("touchmove", this.swipeEvent);
+        swipeContainerMobile.addEventListener("touchstart", (e) => {
+            throttleFunction2(e)
+        });
+        swipeContainerMobile.addEventListener("touchmove", (e) => {
+            throttleFunction2(e)
+        });
         swipeContainerMobile.addEventListener("touchend", (e) => {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 200) , this.state.touchMove > Number(this.state.touchStart + 200));
         });
