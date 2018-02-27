@@ -23,8 +23,7 @@ class Home extends Component {
             isUserAtTopOfPage: true,
             counter: 1,
             touchStart: null,
-            touchMove: null,
-            playButtonHeight: null,
+            touchMove: null
 		}
 	}
     changeState(changeState) {
@@ -46,7 +45,6 @@ class Home extends Component {
                },
                touchStart: changeState.touchStart !== undefined ? changeState.touchStart : preveState.touchStart,
                touchMove: changeState.touchMove !== undefined ? changeState.touchMove : preveState.touchMove,
-               playButtonHeight: changeState.playButtonHeight !== undefined ? changeState.playButtonHeight : preveState.playButtonHeight,
             }
         });
     }
@@ -156,8 +154,6 @@ class Home extends Component {
     }
     resizeEvent() {
 
-       const playButton = document.querySelector('video');
-
         this.changeState({
             animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
             animationPara: 'home__section--havoc__animation-container-para--one-after-animation',
@@ -173,13 +169,11 @@ class Home extends Component {
             counter: 1,
             touchStart: null,
             touchMove: null,
-            playButtonHeight: (playButton.offsetHeight)
         });
     }
     componentDidMount() {
-
+       
         const swipeContainerMobile = document.getElementById('swipe-container-mobile');
-        const playButton = document.querySelector('video');
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
            
@@ -191,18 +185,18 @@ class Home extends Component {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
         });
 
-        window.addEventListener("keydown", function(e) { // for key events
+        window.addEventListener("keydown", (e) => { // for key events
             throttleFunction(e, e.keyCode === 40, e.keyCode === 38);
         });
 
-        window.addEventListener('mousewheel', function(e) { // for wheel events 
+        window.addEventListener('mousewheel', (e) => { // for wheel events 
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE9, Chrome, Safari, Opera*/
  
-        window.addEventListener('DOMMouseScroll', function(e) {
+        window.addEventListener('DOMMouseScroll', (e) => {
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // Firefox
-        window.addEventListener('onmousewheel', function(e) {
+        window.addEventListener('onmousewheel', (e) => {
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         }); // IE 6/7/8
 
@@ -212,8 +206,7 @@ class Home extends Component {
                 2: this.state.backgroundImg[2],
                 3: this.state.backgroundImg[3],
                 4: this.state.backgroundImg[4],
-            },
-            playButtonHeight: (playButton.offsetHeight)
+            }
         });
     }
 	componentWillMount() {
@@ -252,8 +245,7 @@ class Home extends Component {
             },
             videoInfo: {
                 videoPoster: '//images.contentful.com/fiz3jwws2um7/5mQmrvVDZCsY6uiKGmWQwa/d93f41bcb8482db75eb9be21132abe1f/translatortvposter.jpg?w=1600',
-                videoSrc: '//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov',
-                playButtonHeight: this.state.playButtonHeight
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov'
             }
         };
         const sectionContainerInfo2 = {
@@ -271,8 +263,7 @@ class Home extends Component {
             },
             videoInfo: {
                 videoPoster: '//images.contentful.com/fiz3jwws2um7/3SFBAMZ4bmiYMoqack028i/8508bd51bfa811f9952d20d801baa70f/zelletvposter.jpg?w=1600',
-                videoSrc: '//videos.contentful.com/fiz3jwws2um7/2U7wQroHzyOQuCs88AggmI/af67357f09dbbce046e8232e3dd8782b/WANN0012000H_City_60_Social_1920x1080.mp4',
-                playButtonHeight: this.state.playButtonHeight
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/2U7wQroHzyOQuCs88AggmI/af67357f09dbbce046e8232e3dd8782b/WANN0012000H_City_60_Social_1920x1080.mp4'
             }
         };
         const sectionContainerInfo4 = {
@@ -283,10 +274,6 @@ class Home extends Component {
             }
         };
 
-        const wow = React.Children.map(this.props.children, function(item) {
-            console.log(item)
-        })
-        console.log(wow)
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
                 <div id="swipe-container-mobile">
@@ -301,10 +288,10 @@ class Home extends Component {
                     	<p className="home__section--slide-show__counter">0{this.state.counter}.</p>
        					<p className="home__section--slide-show__bottom-border"></p>
                     	<div className="home__section--slide-show__content" style={{height: window.innerHeight * 4 + 'px', top: this.state.slideShowContentPosition + 'px'}}>
-                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo1} />
-                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo2} />
-                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo3} />
-                            <SlideShowContainer sectionContainerInfo={sectionContainerInfo4} />
+                            <SlideShowContainer pathName={this.props.location.pathname} sectionContainerInfo={sectionContainerInfo1} />
+                            <SlideShowContainer pathName={this.props.location.pathname} sectionContainerInfo={sectionContainerInfo2} />
+                            <SlideShowContainer pathName={this.props.location.pathname} sectionContainerInfo={sectionContainerInfo3} />
+                            <SlideShowContainer pathName={this.props.location.pathname} sectionContainerInfo={sectionContainerInfo4} />
                     	</div>
                         <div className={this.state.backgroundImg[1] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.one }}></div>
                         <div className={this.state.backgroundImg[2] + " home__section--slide-show--backgorund-img"} style={{height: window.innerHeight + 'px', backgroundImage: backgroundImages.two }}></div>

@@ -13,7 +13,7 @@ const SlideShowContainer = (props) => {
     		<p className="home__section--slide-show__content__border-line"></p>
     		<p>{info.paragraph}</p>
             {
-                videoInfo !== undefined ? <Video videoInfo={videoInfo} /> : null
+                videoInfo !== undefined ? <Video pathName={props.pathName} videoInfo={videoInfo} /> : null
             }
         </div>
 	);

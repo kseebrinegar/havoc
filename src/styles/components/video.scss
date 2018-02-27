@@ -1,7 +1,7 @@
 @import '../abstracts/mixins.scss';
+@import '../abstracts/variables.scss';
 
 .video--home {
-	cursor: pointer;
 	@include position-top-left-width(absolute, 75px, 60%, 40%);
 
 	.video--homeplay__play-button {
@@ -14,11 +14,58 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 1
+		z-index: 1;
+		cursor: pointer;
 	}
 
 	video {
 		width: 100%;
+	}
+
+	.video__controls {
+		position: absolute;
+		height: 40px;
+		width: 100%;
+		z-index: 2;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+		.fa-pause {
+			cursor: pointer !important;
+		}
+
+		.video__controls__seekSlider {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+		}
+
+		.video__controls__volume--up, .video__controls__volume--down, .video__controls__full-screen {
+			cursor: pointer;
+		}
+
+		.video__controls__volume--down {
+			padding: 0px 6.5px;
+		}
+
+		p:first-of-type {
+			margin-left: 0px !important;
+			background: orange;
+		}
+	}
+}
+
+.video__controls__seekSlider {
+
+	input {
+		flex-shrink: 0;
+	}
+
+	span {
+		font-size: 12px;
+		padding: 0px 5px;
+		display: inline-block;
 	}
 }
 
