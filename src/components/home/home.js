@@ -126,7 +126,7 @@ class Home extends Component {
     swipeEvent(e) {
       
         if (e.type === 'touchstart') {
-             e.preventDefault();
+            
             this.changeState({
                 touchStart: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -139,7 +139,7 @@ class Home extends Component {
         } 
 
         if (e.type === 'touchmove') {
-            e.preventDefault();
+        
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                 backgroundImg: {
