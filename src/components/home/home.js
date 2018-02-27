@@ -88,7 +88,7 @@ class Home extends Component {
            
             return;
         } else if (express1 && !this.state.isUserAtTopOfPage) {
-            console.log(express1)
+         
             if (this.state.counter >= 4) {
                 return;
             }
@@ -108,7 +108,7 @@ class Home extends Component {
 
             return;
         } else if (express2 && !this.state.isUserAtTopOfPage) {
-            console.log(express2)
+            
             this.changeState({
                 slideShowContentPosition: this.state.slideShowContentPosition + (window.innerHeight),
                 counter: this.state.counter - 1,
@@ -185,7 +185,7 @@ class Home extends Component {
             this.swipeEvent(e);
         });
         swipeContainerMobile.addEventListener("touchend", (e) => {
-            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 200) , this.state.touchMove > Number(this.state.touchStart + 200));
+            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 100) && this.state.touchMove !== null , this.state.touchMove > Number(this.state.touchStart + 100) && this.state.touchMove !== null);
         });
 
         window.addEventListener("keydown", (e) => { // for key events
