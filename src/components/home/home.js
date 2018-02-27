@@ -140,7 +140,6 @@ class Home extends Component {
 
         if (e.type === 'touchmove') {
 
-            e.preventDefault();
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -150,6 +149,7 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
+            e.preventDefault();
         } 
     }
     resizeEvent() {
@@ -176,18 +176,13 @@ class Home extends Component {
         const swipeContainerMobile = document.getElementById('swipe-container-mobile');
         const throttleFunction = _.throttle((e, express1, express2) => {
             this.scrollToSection(e, express1, express2);
-           
-        }, 500, { 'trailing': false });
-        const throttleFunction2 = _.throttle((e) => {
-            this.swipeEvent(e);
-           
         }, 500, { 'trailing': false });
 
         swipeContainerMobile.addEventListener("touchstart", (e) => {
-            throttleFunction2(e)
+            this.swipeEvent(e);
         });
         swipeContainerMobile.addEventListener("touchmove", (e) => {
-            throttleFunction2(e)
+            this.swipeEvent(e);
         });
         swipeContainerMobile.addEventListener("touchend", (e) => {
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 200) , this.state.touchMove > Number(this.state.touchStart + 200));
@@ -233,9 +228,9 @@ class Home extends Component {
             });  
 		}, 1000);
 
-        window.addEventListener('resize', (e) => {
+       /* window.addEventListener('resize', (e) => {
             this.resizeEvent();
-        });
+        });*/
 	}
     render() {
 
