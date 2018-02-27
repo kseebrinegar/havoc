@@ -49,7 +49,8 @@ class Home extends Component {
         });
     }
     scrollToSection(e, express1, express2) {
-  
+        console.log(express1)
+        console.log(express2)
         if (express1 && this.state.isUserAtTopOfPage) {
 
             this.changeState({
@@ -183,7 +184,8 @@ class Home extends Component {
         swipeContainerMobile.addEventListener("touchstart", this.swipeEvent);
         swipeContainerMobile.addEventListener("touchmove", this.swipeEvent);
         swipeContainerMobile.addEventListener("touchend", (e) => {
-            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 50) , this.state.touchMove > Number(this.state.touchStart + 50));
+            console.log(this.state.touchMove < Number(this.state.touchStart - 50))
+            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 200) , this.state.touchMove > Number(this.state.touchStart + 200));
         });
 
         window.addEventListener("keydown", (e) => { // for key events
