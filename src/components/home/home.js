@@ -135,7 +135,7 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
-            e.preventDefault();
+             e.preventDefault();
         } 
 
         if (e.type === 'touchmove') {
