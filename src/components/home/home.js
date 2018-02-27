@@ -49,8 +49,7 @@ class Home extends Component {
         });
     }
     scrollToSection(e, express1, express2) {
-        console.log(express1)
-        console.log(express2)
+       
         if (express1 && this.state.isUserAtTopOfPage) {
 
             this.changeState({
@@ -125,8 +124,9 @@ class Home extends Component {
         }      
     }
     swipeEvent(e) {
- 
+      
         if (e.type === 'touchstart') {
+             e.preventDefault();
             this.changeState({
                 touchStart: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -136,11 +136,10 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
-             e.preventDefault();
         } 
 
         if (e.type === 'touchmove') {
-            
+            e.preventDefault();
             this.changeState({
                 touchMove: Math.round(e.touches[0].clientY),
                 backgroundImg: {
@@ -150,8 +149,6 @@ class Home extends Component {
                     4: this.state.backgroundImg[4],
                 }
             });
-
-            e.preventDefault();
         } 
     }
     resizeEvent() {
@@ -184,7 +181,6 @@ class Home extends Component {
         swipeContainerMobile.addEventListener("touchstart", this.swipeEvent);
         swipeContainerMobile.addEventListener("touchmove", this.swipeEvent);
         swipeContainerMobile.addEventListener("touchend", (e) => {
-            console.log(this.state.touchMove < Number(this.state.touchStart - 50))
             throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 200) , this.state.touchMove > Number(this.state.touchStart + 200));
         });
 
