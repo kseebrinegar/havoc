@@ -141,10 +141,9 @@ class Video extends React.Component {
 		});
 	}
 	componentDidMount() {
-
-		this.setVideosControlsPosition();
 		
 		const throttleFunction = _.throttle(() => {
+			this.setVideosControlsPosition();
            	this.stopVideoOnWheelEventOrResize();
         }, 500, { 'trailing': false });
 
@@ -154,7 +153,7 @@ class Video extends React.Component {
 		});
 
         window.addEventListener("keydown", (e) => { // for key events
-        	if (this.props.location === '/') {
+        	if (this.props.pathName === '/') {
 				throttleFunction();
         	}
         });
@@ -196,8 +195,8 @@ class Video extends React.Component {
 				<div onClick={this.playAndPauseButton} style={stylePlayButton} className="video--homeplay__play-button">
 					<p className="fas fa-play"></p>
 				</div>
-				<video ref="homeVideo" onTimeUpdate={this.onTimeUpdate} poster={videoPoster} >
-					<source src={videoSrc}/>
+				<video ref="homeVideo" onTimeUpdate={this.onTimeUpdate} poster={videoPoster}>
+					<source src={videoSrc}/> 
 				</video>
 				<div className="video__controls" style={styleVideoControls}>
 					<div onClick={this.playAndPauseButton}>
