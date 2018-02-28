@@ -110,7 +110,8 @@ table {
     z-index: 1;
     cursor: pointer; }
   .video--home video {
-    width: 100%; }
+    width: 100%;
+    height: 100%; }
   .video--home .video__controls {
     position: absolute;
     height: 40px;
@@ -566,16 +567,8 @@ header {
 .hamburger-hover-color--pink:hover {
   background: #EA178C; }
 
-@media (hover: none) {
-  .hamburger-hover-color--pink {
-    color: white; } }
-
 .hamburger-hover-color--page-background:hover {
   background: #F4F4F4; }
-
-@media (hover: none) {
-  .hamburger-hover-color--page-background {
-    color: white; } }
 
 .hamburgerLogo {
   left: 50%;

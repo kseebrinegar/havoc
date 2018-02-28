@@ -101,16 +101,8 @@ header {
 .hamburger-hover-color--pink:hover {
   background: #EA178C; }
 
-@media (hover: none) {
-  .hamburger-hover-color--pink {
-    color: white; } }
-
 .hamburger-hover-color--page-background:hover {
   background: #F4F4F4; }
-
-@media (hover: none) {
-  .hamburger-hover-color--page-background {
-    color: white; } }
 
 .hamburgerLogo {
   left: 50%;

@@ -194,10 +194,10 @@ class Home extends Component {
 
         window.addEventListener('mousewheel', (e) => { // for wheel events 
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
-        }); // IE9, Chrome, Safari, Opera*/
+        }); // IE9, Chrome, Safari, Opera
  
         window.addEventListener('DOMMouseScroll', (e) => {
-            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+            throttleFunction(e, e.detail >= 1, e.detail <= -1);
         }); // Firefox
         window.addEventListener('onmousewheel', (e) => {
             throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);

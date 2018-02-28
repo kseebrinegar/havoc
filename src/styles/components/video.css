@@ -23,7 +23,8 @@
     z-index: 1;
     cursor: pointer; }
   .video--home video {
-    width: 100%; }
+    width: 100%;
+    height: 100%; }
   .video--home .video__controls {
     position: absolute;
     height: 40px;
