@@ -228,9 +228,9 @@ class Home extends Component {
             });  
 		}, 1000);
 
-       /* window.addEventListener('resize', (e) => {
+        window.addEventListener('resize', (e) => {
             this.resizeEvent();
-        });*/
+        });
 	}
     render() {
 
