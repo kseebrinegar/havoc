@@ -36,64 +36,66 @@ header {
       justify-content: center;
       align-content: center;
       flex-direction: column; } }
-  .drop-menu__list li {
+  .drop-menu__list a {
+    color: black;
+    text-decoration: none;
     text-align: center;
     margin: 150px 0px 50px 0px;
     flex: 1; }
-    .drop-menu__list li h2 {
+    .drop-menu__list a h2 {
       font-size: 32px;
       font-color: black;
       font-weight: 900;
       padding-bottom: 5px;
       cursor: pointer; }
-      .drop-menu__list li h2:hover {
+      .drop-menu__list a h2:hover {
         color: #EA178C; }
       @media (min-width: 1800px) {
-        .drop-menu__list li h2 {
+        .drop-menu__list a h2 {
           font-size: 42px; } }
       @media (max-width: 900px) {
-        .drop-menu__list li h2 {
+        .drop-menu__list a h2 {
           font-size: 20px;
           order: -2; } }
-    .drop-menu__list li p {
+    .drop-menu__list a p {
       font-size: 14px;
       color: #333333;
       font-weight: 200;
       margin-bottom: 25px; }
       @media (max-width: 900px) {
-        .drop-menu__list li p {
+        .drop-menu__list a p {
           margin-bottom: 0px; } }
       @media (min-width: 1800px) {
-        .drop-menu__list li p {
+        .drop-menu__list a p {
           font-size: 16px; } }
     @media (max-width: 900px) {
-      .drop-menu__list li p:first-of-type {
+      .drop-menu__list a p:first-of-type {
         font-size: 14px;
         color: #333333;
         font-weight: 200;
         align-self: center; } }
-    .drop-menu__list li p:last-of-type {
+    .drop-menu__list a p:last-of-type {
       margin-top: 35px;
       border-bottom: 1px solid black;
       width: 50px;
       margin: 0 auto; }
       @media (max-width: 900px) {
-        .drop-menu__list li p:last-of-type {
+        .drop-menu__list a p:last-of-type {
           border-bottom: 1px solid black;
           flex-grow: 1;
           align-self: center;
           margin: 0 10px;
           order: -1; } }
     @media (max-width: 900px) {
-      .drop-menu__list li {
+      .drop-menu__list a {
         display: flex;
         justify-content: space-around;
         padding: 5px 4%;
         margin: 0px 0px 0px 0px;
         flex: 0; }
-        .drop-menu__list li:first-of-type {
+        .drop-menu__list a:first-of-type {
           margin: 125px 0px 0px 0px; }
-        .drop-menu__list li:hover h2, .drop-menu__list li:hover p:first-of-type {
+        .drop-menu__list a:hover h2, .drop-menu__list a:hover p:first-of-type {
           color: #EA178C;
           cursor: pointer;
           transition: .1s; } }
@@ -104,53 +106,53 @@ header {
 .hamburger-hover-color--page-background:hover {
   background: #F4F4F4; }
 
-.hamburgerLogo {
+.hamburgerLogo, .hamburgerLogo--animate {
   left: 50%;
   display: flex;
-  margin: 50px 0px;
   cursor: pointer;
   transform: translateX(-50%);
   z-index: 100;
+  position: fixed;
   width: 75px;
   height: 75px;
   position: fixed;
   overflow: visible; }
   @media (max-width: 600px) {
-    .hamburgerLogo {
+    .hamburgerLogo, .hamburgerLogo--animate {
       width: 60px;
       height: 60px;
       position: fixed;
       overflow: visible; } }
-  .hamburgerLogo:hover .hamburgerLogo__letter--font-big {
+  .hamburgerLogo:hover .hamburgerLogo__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo__letter--font-big, .hamburgerLogo:hover .hamburgerLogo--animate__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo--animate__letter--font-big {
     color: white; }
-  .hamburgerLogo__letter--font-big {
+  .hamburgerLogo__letter--font-big, .hamburgerLogo--animate__letter--font-big {
     margin: auto;
     font-size: 38px;
     color: #EA178C;
     font-weight: 900; }
-  .hamburgerLogo__letter--font-small {
+  .hamburgerLogo__letter--font-small, .hamburgerLogo--animate__letter--font-small {
     margin: auto;
     font-size: 18px;
     color: #EA178C;
     font-weight: 900; }
     @media (max-width: 600px) {
-      .hamburgerLogo__letter--font-small {
+      .hamburgerLogo__letter--font-small, .hamburgerLogo--animate__letter--font-small {
         margin: auto;
         font-size: 16px;
         color: #EA178C;
         font-weight: 900; } }
-  .hamburgerLogo__animation-container {
+  .hamburgerLogo__animation-container, .hamburgerLogo--animate__animation-container {
     width: 75px;
     height: 75px;
     position: absolute;
     overflow: hidden; }
     @media (max-width: 600px) {
-      .hamburgerLogo__animation-container {
+      .hamburgerLogo__animation-container, .hamburgerLogo--animate__animation-container {
         width: 60px;
         height: 60px;
         position: absolute;
         overflow: hidden; } }
-    .hamburgerLogo__animation-container_box {
+    .hamburgerLogo__animation-container_box, .hamburgerLogo--animate__animation-container_box {
       -webkit-transform-origin: 150% 100%;
       -ms-transform-origin: 150% 100%;
       transform: rotate(-45deg);
@@ -158,14 +160,24 @@ header {
       animation: logo 3s;
       width: 300px;
       height: 20px; }
-      .hamburgerLogo__animation-container_box--big {
+      .hamburgerLogo__animation-container_box--big, .hamburgerLogo--animate__animation-container_box--big {
         margin-bottom: 15px;
         background: #EA178C;
         height: 35px; }
-      .hamburgerLogo__animation-container_box--small {
+      .hamburgerLogo__animation-container_box--small, .hamburgerLogo--animate__animation-container_box--small {
         margin-bottom: 75px;
         background: #EA178C;
         height: 10px; }
+
+.hamburgerLogo {
+  margin: 50px 0px;
+  transition: .5s;
+  opacity: 1; }
+
+.hamburgerLogo--animate {
+  margin: -75px 0px;
+  transition: .5s;
+  opcacity: 0; }
 
 @keyframes logo {
   0% {

@@ -6,7 +6,6 @@
 - big-desktop: 1800px +
 */
 html, body {
-  overflow: hidden;
   width: 100%;
   height: 100%; }
 

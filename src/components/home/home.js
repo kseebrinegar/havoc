@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import _ from 'lodash';
 import SlideShowContainer from './slideShowContainer';
 
@@ -9,6 +9,10 @@ class Home extends Component {
         this.changeState = this.changeState.bind(this);
         this.swipeEvent = this.swipeEvent.bind(this);
         this.resizeEvent = this.resizeEvent.bind(this);
+        this.throttle = _.throttle((e, express1, express2) => {
+            this.scrollToSection(e, express1, express2);
+        }, 500, { 'trailing': false });
+
 		this.state = {
 			animationLine: 'home__section--havoc__animation-container-para--two-before-animation',
 			animationPara: 'home__section--havoc__animation-container-para--one-before-animation',
@@ -171,50 +175,46 @@ class Home extends Component {
             touchMove: null,
         });
     }
+    componentWillUnmount() {
+
+        document.body.style.overflow = 'visible';
+
+        window.removeEventListener('keydown', this.throttle);
+        window.removeEventListener('mousewheel', this.throttle);
+        window.removeEventListener('DOMMouseScroll', this.throttle);
+        window.removeEventListener('onmousewheel', this.throttle);
+        window.removeEventListener('touchstart', this.swipeEvent);
+        window.removeEventListener('touchmove', this.swipeEvent);
+        window.removeEventListener('touchend', this.throttle);
+        window.removeEventListener('resize', this.resizeEvent);
+    }
     componentDidMount() {
        
-        const swipeContainerMobile = document.getElementById('swipe-container-mobile');
-        const throttleFunction = _.throttle((e, express1, express2) => {
-            this.scrollToSection(e, express1, express2);
-        }, 500, { 'trailing': false });
+       const swipeContainerMobile = this.refs.swipeMobile
 
-        swipeContainerMobile.addEventListener("touchstart", (e) => {
-            this.swipeEvent(e);
-        });
-        swipeContainerMobile.addEventListener("touchmove", (e) => {
-            this.swipeEvent(e);
-        });
-        swipeContainerMobile.addEventListener("touchend", (e) => {
-            throttleFunction(e, this.state.touchMove < Number(this.state.touchStart - 100) && this.state.touchMove !== null , this.state.touchMove > Number(this.state.touchStart + 100) && this.state.touchMove !== null);
+       swipeContainerMobile.addEventListener("touchstart", this.swipeEvent);
+       swipeContainerMobile.addEventListener("touchmove",  this.swipeEvent);
+       swipeContainerMobile.addEventListener("touchend", (e) => {
+            this.throttle(e, this.state.touchMove < Number(this.state.touchStart - 100) && this.state.touchMove !== null , this.state.touchMove > Number(this.state.touchStart + 100) && this.state.touchMove !== null);
+       });
+        
+        window.addEventListener('keydown', (e) => {
+            this.throttle(e, e.keyCode === 40, e.keyCode === 38);
         });
 
-        window.addEventListener("keydown", (e) => { // for key events
-            throttleFunction(e, e.keyCode === 40, e.keyCode === 38);
+        window.addEventListener('mousewheel', (e) => {
+            this.throttle(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
         });
 
-        window.addEventListener('mousewheel', (e) => { // for wheel events 
-            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
-        }); // IE9, Chrome, Safari, Opera
- 
         window.addEventListener('DOMMouseScroll', (e) => {
-            throttleFunction(e, e.detail >= 1, e.detail <= -1);
-        }); // Firefox
-        window.addEventListener('onmousewheel', (e) => {
-            throttleFunction(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
-        }); // IE 6/7/8
-
-        this.changeState({
-            backgroundImg: {
-                1: this.state.backgroundImg[1],
-                2: this.state.backgroundImg[2],
-                3: this.state.backgroundImg[3],
-                4: this.state.backgroundImg[4],
-            }
+            this.throttle(e, e.detail >= 1, e.detail <= -1);
         });
-    }
-	componentWillMount() {
 
-		setTimeout(() => {
+        window.addEventListener('onmousewheel', (e) => {
+            this.throttle(e, e.wheelDelta <= -120, e.wheelDelta >= 120);
+        });
+
+        setTimeout(() => {
 
             this.changeState({
                 animationLine: 'home__section--havoc__animation-container-para--two-after-animation',
@@ -225,12 +225,15 @@ class Home extends Component {
                     3: this.state.backgroundImg[3],
                     4: this.state.backgroundImg[4],
                 },
-            });  
-		}, 1000);
+            });
+        }, 1000)
+        
+    }
+	componentWillMount() {
 
-        window.addEventListener('resize', (e) => {
-            this.resizeEvent();
-        });
+        document.body.style.overflow = 'hidden';
+
+        window.addEventListener('resize', this.resizeEvent);
 	}
     render() {
 
@@ -248,7 +251,11 @@ class Home extends Component {
             },
             videoInfo: {
                 videoPoster: '//images.contentful.com/fiz3jwws2um7/5mQmrvVDZCsY6uiKGmWQwa/d93f41bcb8482db75eb9be21132abe1f/translatortvposter.jpg?w=1600',
-                videoSrc: '//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov'
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/201F4YQCtmEIMm4eMyqkI0/929be99e38e63bccd184881c485f752e/SuperBowlNoText.mov',
+                loopVideo: false,
+                autoPlay: false,
+                muted: false,
+                initPlayState: false
             }
         };
         const sectionContainerInfo2 = {
@@ -266,7 +273,11 @@ class Home extends Component {
             },
             videoInfo: {
                 videoPoster: '//images.contentful.com/fiz3jwws2um7/3SFBAMZ4bmiYMoqack028i/8508bd51bfa811f9952d20d801baa70f/zelletvposter.jpg?w=1600',
-                videoSrc: '//videos.contentful.com/fiz3jwws2um7/2U7wQroHzyOQuCs88AggmI/af67357f09dbbce046e8232e3dd8782b/WANN0012000H_City_60_Social_1920x1080.mp4'
+                videoSrc: '//videos.contentful.com/fiz3jwws2um7/2U7wQroHzyOQuCs88AggmI/af67357f09dbbce046e8232e3dd8782b/WANN0012000H_City_60_Social_1920x1080.mp4',
+                loopVideo: false,
+                autoPlay: false,
+                muted: false,
+                initPlayState: false
             }
         };
         const sectionContainerInfo4 = {
@@ -279,7 +290,7 @@ class Home extends Component {
 
         return (
             <div className="home" style={{top: this.state.homeScrollDown + 'px'}}>
-                <div id="swipe-container-mobile">
+                <div ref="swipeMobile">
                     <section className="home__section--havoc" style={{height: window.innerHeight + 'px'}}>
                     	<h1 className="home__section--havoc__title">Havoc</h1>
                     	<div className="home__section--havoc__animation-container">

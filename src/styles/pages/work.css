@@ -1,0 +1,24 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+.work {
+  height: 2000px;
+  background: black; }
+
+.work__make-something-you-love h2 {
+  color: white;
+  font-size: 60px;
+  font-weight: 300;
+  text-align: center;
+  margin: 75px 0px;
+  padding: 0 4%; }
+  @media (max-width: 900px) {
+    .work__make-something-you-love h2 {
+      font-size: 44px; } }
+  @media (min-width: 1800px) {
+    .work__make-something-you-love h2 {
+      font-size: 76px; } }

@@ -3,6 +3,7 @@
 
 .video--home {
 	@include position-top-left-width(absolute, 75px, 60%, 40%);
+	color: white;
 
 	.video--homeplay__play-button {
 		width: 75px;
@@ -10,12 +11,19 @@
 		background: rgba(234,23,140, .7);
 		position: absolute;
 		left: 50%;
-		transform: translateX(-50%);
+		top: 50%;
+		transform: translate(-50%, -50%);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		z-index: 1;
 		cursor: pointer;
+
+		@include respond(phone) {
+			width: 60px;
+			height: 60px;
+		}
+
 	}
 
 	video {
@@ -26,19 +34,29 @@
 		position: absolute;
 		height: 40px;
 		width: 100%;
+		bottom: 0px;
 		z-index: 2;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 
+
 		.fa-pause {
 			cursor: pointer !important;
 		}
 
-		.video__controls__seekSlider {
+		.video__controls__seekSlider--home, .video__controls__seekSlider {
 			cursor: pointer;
 			display: flex;
 			align-items: center;
+			
+			input {
+				flex-grow: 1;
+			}
+		}
+
+		.video__controls__seekSlider {
+			flex-grow: 1
 		}
 
 		.video__controls__volume--up, .video__controls__volume--down, .video__controls__full-screen {
@@ -51,7 +69,6 @@
 
 		p:first-of-type {
 			margin-left: 0px !important;
-			background: orange;
 		}
 	}
 }

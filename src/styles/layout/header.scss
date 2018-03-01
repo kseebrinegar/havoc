@@ -37,13 +37,14 @@ header {
 		flex-direction: column;
 	}
 
-	li {
+	a {
+		color: $color-font-dark-black;
+		text-decoration: none;
 		text-align: center;
 		margin: 150px 0px 50px 0px;
 		flex: 1;
 
 		h2 {
-
 			font-size: 32px;
 			font-color: $color-font-dark-black;
 			font-weight: 900;
@@ -136,13 +137,13 @@ header {
 	}
 }
 
-.hamburgerLogo {
+.hamburgerLogo, .hamburgerLogo--animate {
 	left: 50%;
 	display: flex;
-	margin: 50px 0px;
 	cursor: pointer;
 	transform: translateX(-50%);
 	z-index: 100;
+	position: fixed;
 	@include height-width-position-overflow(75px, 75px, fixed, visible);
 
 	@include respond(phone) {
@@ -190,6 +191,18 @@ header {
 			}
 		}
 	}
+}
+
+.hamburgerLogo {
+	margin: 50px 0px;
+	transition: .5s;
+	opacity: 1;
+}
+
+.hamburgerLogo--animate {
+	margin: -75px 0px;
+	transition: .5s;
+	opcacity: 0;
 }
 
 @keyframes logo {
