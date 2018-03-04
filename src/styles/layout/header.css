@@ -106,6 +106,9 @@ header {
 .hamburger-hover-color--page-background:hover {
   background: #F4F4F4; }
 
+.hamburger-hover-color--black:hover {
+  background: black; }
+
 .hamburgerLogo, .hamburgerLogo--animate {
   left: 50%;
   display: flex;
@@ -123,8 +126,13 @@ header {
       height: 60px;
       position: fixed;
       overflow: visible; } }
-  .hamburgerLogo:hover .hamburgerLogo__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo__letter--font-big, .hamburgerLogo:hover .hamburgerLogo--animate__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo--animate__letter--font-big {
+  .hamburgerLogo:hover .hamburgerLogo__letter--font-big, .hamburgerLogo:hover .hamburgerLogo__letter--font-big--other-pages, .hamburgerLogo--animate:hover .hamburgerLogo__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo__letter--font-big--other-pages, .hamburgerLogo:hover .hamburgerLogo--animate__letter--font-big, .hamburgerLogo:hover .hamburgerLogo--animate__letter--font-big--other-pages, .hamburgerLogo--animate:hover .hamburgerLogo--animate__letter--font-big, .hamburgerLogo--animate:hover .hamburgerLogo--animate__letter--font-big--other-pages {
     color: white; }
+  .hamburgerLogo__letter--font-big--other-pages, .hamburgerLogo--animate__letter--font-big--other-pages {
+    margin: auto;
+    font-size: 38px;
+    color: black;
+    font-weight: 900; }
   .hamburgerLogo__letter--font-big, .hamburgerLogo--animate__letter--font-big {
     margin: auto;
     font-size: 38px;

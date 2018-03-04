@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 
 class Video extends React.Component {
 	constructor(props) {
@@ -121,6 +120,7 @@ class Video extends React.Component {
 	playAndPauseButton() {
 		
 		const video = this.refs.homeVideo;
+		
 
 		if (!this.state.initPlayState) {
 
@@ -130,13 +130,17 @@ class Video extends React.Component {
 				video.pause();
 			}
 	
+		} else {
+			video.currentTime = 0;
 		}
-
+		
 		this.setState((prevState) => {
 			return {
 				playButtonOpacity: prevState.playButtonOpacity === 1 ? 0 : 1,
 				controlsContainerDisplay: prevState.controlsContainerDisplay === 'none' ? 'flex' : 'none',
-				videoMuted: prevState.initPlayState === false ? prevState.initPlayState : (prevState.videoMuted === true ? false : true)
+				videoMuted: prevState.initPlayState === false ? prevState.initPlayState : (prevState.videoMuted === true ? false : true),
+				volumeUp: this.props.pathName !== '/' ? (video.paused ? 'none' : 'block') : prevState.volumeUp,
+				volumeDown: this.props.pathName !== '/' ?  (video.paused ? 'block' : 'none') : prevState.volumeDown
 			}
 		});
 	}
@@ -181,7 +185,7 @@ class Video extends React.Component {
         window.addEventListener("keydown", this.executeWindowEvents);
         window.addEventListener('mousewheel', this.executeWindowEvents);
         window.addEventListener('DOMMouseScroll', this.executeWindowEvents);
-        window.addEventListener('onmousewheel', this.executeWindowEvents);
+        window.addEventListener('onmousewheel', this.executeWindowEvents);      
 
 	}
 	stylePlayButton() {
@@ -215,7 +219,6 @@ class Video extends React.Component {
     			width:'100%',
     			backgroundColor: 'red',
     			height: '80vh',
-    			width: '100%',
   				overflow: 'hidden',
   				right: '0',
 			}
@@ -245,12 +248,7 @@ class Video extends React.Component {
 		}
 	}
     render() {
-    	const homeStylePlayButton = {
-    		top: (this.state.videoHeight / 2) - 37.5 + 'px', 
-    		opacity: this.state.playButtonOpacity, 
-    		transition: '.5s',
-    		transform: 'translateX(-50%)'
-    	}
+    	
     	const styleVideoControls = {
     		display: this.state.controlsContainerDisplay, 
     		top: this.state.videoControlsPostion

@@ -1,0 +1,147 @@
+@import "../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+.bottom-page-banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 600px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+ 	  @include respond(videoplayer) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+    .bottom-page-banner__havoc-box {
+		width: 20vw;
+		height: 20vw;
+		background: white;
+		margin-right: 75px;
+		color: $color-font-light-black;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		h3 {
+			margin-top: 25px;
+			font-weight: 900;
+			font-size: 28px;
+
+			
+			@include respond(tab-land) {
+				font-size: 22px;
+			}
+
+			@include respond(tab-port) {
+				font-size: 18px;
+			}
+		}
+
+		span {
+			color: $color-font-light-pink;
+		}
+
+		&__animate-number-box {
+			display: flex;
+			margin-bottom: 10px;
+			
+			p:first-of-type {
+				width: 100px;
+				border-bottom: 1px solid $color-font-dark-black;
+				align-self: center;
+				margin: 0 5px;	
+
+				@include respond(tab-land) {
+					width: 75px;
+				}
+
+				@include respond(tab-port) {
+					width: 50px;
+				}
+
+				@include respond(big-desktop) {
+					width: 125px;
+				}
+
+			}
+
+			h4 {
+				font-size: 10px;
+				font-weight: 900;
+
+				@include respond(tab-land) {
+					font-size: 8px;
+				}
+
+				@include respond(big-desktop) {
+					font-size: 12px;
+				}
+			}
+
+			p {
+				font-size: 10px;
+				color: $color-font-dark-black;
+				font-weight: 900;
+
+				@include respond(tab-land) {
+					font-size: 8px;
+				}
+
+				@include respond(big-desktop) {
+					font-size: 12px;
+				}
+			}
+		}
+
+
+		@include respond(tab-port) {
+			width: 25vw;
+			height: 25vw;
+		}
+
+		@include respond(videoplayer) {
+			width: 35vw;
+			height: 35vw;
+			margin: 0px 0px 50px 10%;
+		}
+    }
+
+    .bottom-page-banner__content {
+		color: white;
+		max-width: 400px;
+
+		@include respond(videoplayer) {
+			margin-left: 10%;
+		}
+
+		h3 {
+			font-size: 60px;
+			margin-bottom: 15px;
+
+			@include respond(videoplayer) {
+				font-size: 44px;
+			}
+
+			@include respond(big-desktop) {
+				font-size: 76px;
+			}
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 25px;
+
+			@include respond(videoplayer) {
+				font-size: 16px;
+			}
+		}
+
+    }
+}

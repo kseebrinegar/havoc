@@ -6,10 +6,10 @@ import Contact from '../components/contact/contact';
 import Work from '../components/work/work';
 import About from '../components/about/about';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 class AppRouter extends React.Component {
 	render() {
-		
 		return (
 			<BrowserRouter>
 				<div>
@@ -21,6 +21,7 @@ class AppRouter extends React.Component {
 						<Route path="/work" component={Work} />
 						<Route path="/contact" component={Contact} />
 					</Switch>
+					<Footer />
 				</div>
 			</BrowserRouter>
 		);

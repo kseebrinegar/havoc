@@ -1,0 +1,83 @@
+@import "../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 200px;
+	background: $color-font-dark-black;
+
+	@include respond(tab-port) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding-left: 4%;
+	}
+
+	.left-side-footer {
+		display: flex;
+		color: white;
+		align-items: center;
+
+		h3 {
+			font-size: 38px;
+		}
+		
+		div {
+			height: 38px;
+			border: 1px solid white;
+			margin: 0 30px;
+		}
+
+		p {
+			@include respond(phone) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.right-side-footer {
+		display: flex;
+		flex-direction: column;
+		
+		ul {
+			display: flex;
+			font-size: 14px;
+			font-weight: 900;
+			padding-top: 35px;
+			
+			@include respond(tab-port) {
+				padding-top: 20px;
+			}
+
+			a {
+				text-decoration: none;
+				margin: 0px 10px;
+				color: $color-font-mid-grey;
+			}
+
+			a:hover {
+				color: white;
+			}
+
+			a:first-of-type {
+				margin-left: 0px;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			color: $color-font-mid-grey;
+			font-weight: 300;
+			font-style: italic;
+			margin: 10px 10px;
+			align-self: flex-end;
+
+			@include respond(tab-port) {
+				align-self: flex-start;
+				margin: 10px 0px;
+			}
+		}
+	}
+}

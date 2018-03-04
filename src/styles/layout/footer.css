@@ -1,0 +1,62 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  background: black; }
+  @media (max-width: 900px) {
+    footer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 4%; } }
+  footer .left-side-footer {
+    display: flex;
+    color: white;
+    align-items: center; }
+    footer .left-side-footer h3 {
+      font-size: 38px; }
+    footer .left-side-footer div {
+      height: 38px;
+      border: 1px solid white;
+      margin: 0 30px; }
+    @media (max-width: 600px) {
+      footer .left-side-footer p {
+        font-size: 14px; } }
+  footer .right-side-footer {
+    display: flex;
+    flex-direction: column; }
+    footer .right-side-footer ul {
+      display: flex;
+      font-size: 14px;
+      font-weight: 900;
+      padding-top: 35px; }
+      @media (max-width: 900px) {
+        footer .right-side-footer ul {
+          padding-top: 20px; } }
+      footer .right-side-footer ul a {
+        text-decoration: none;
+        margin: 0px 10px;
+        color: #888888; }
+      footer .right-side-footer ul a:hover {
+        color: white; }
+      footer .right-side-footer ul a:first-of-type {
+        margin-left: 0px; }
+    footer .right-side-footer p {
+      font-size: 14px;
+      color: #888888;
+      font-weight: 300;
+      font-style: italic;
+      margin: 10px 10px;
+      align-self: flex-end; }
+      @media (max-width: 900px) {
+        footer .right-side-footer p {
+          align-self: flex-start;
+          margin: 10px 0px; } }

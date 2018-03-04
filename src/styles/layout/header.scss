@@ -137,6 +137,12 @@ header {
 	}
 }
 
+.hamburger-hover-color--black {
+	&:hover {
+		background: $color-font-dark-black;
+	}
+}
+
 .hamburgerLogo, .hamburgerLogo--animate {
 	left: 50%;
 	display: flex;
@@ -150,11 +156,18 @@ header {
 		@include height-width-position-overflow(60px, 60px, fixed, visible);
 	}
 
-	&:hover &__letter--font-big {
+	&:hover &__letter--font-big, &:hover &__letter--font-big--other-pages {
 		color: white;
 	}
 
-	&__letter--font-big {
+	&__letter--font-big--other-pages {
+		margin: auto;
+		font-size: 38px;
+		color: black;
+		font-weight: 900;
+	}
+
+	&__letter--font-big  {
 		@include hamburgerLogo__letter--font(38px);
 	}
 

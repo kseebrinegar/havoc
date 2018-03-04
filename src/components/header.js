@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import uuid from 'uuid';
 
 class Header extends React.Component {
@@ -11,13 +12,14 @@ class Header extends React.Component {
 		this.closeDropMenu = this.closeDropMenu.bind(this);
 
 		this.state = {
-			toggleClassLetter: 'hamburgerLogo__letter--font-big',
+			toggleClassLetter: window.location.pathname === '/' ? 'hamburgerLogo__letter--font-big' : 'hamburgerLogo__letter--font-big--other-pages',
 			hamburgerLogoContent: 'H',
 			dropMenu: 'drop-menu--closed',
-			logoHover: 'hamburger-hover-color--pink',
+			logoHover: window.location.pathname === '/' ? 'hamburger-hover-color--pink' : 'hamburger-hover-color--black',
 			logoBackground: 'background-white',
 			animatePositionOfLogo: 'hamburgerLogo',
-			lastPositionOfPage: 0
+			lastPositionOfPage: 0,
+			path: this.props.location.pathname
 		}
 
 	}
@@ -31,19 +33,15 @@ class Header extends React.Component {
 				logoHover: changeState.logoHover !== undefined ? changeState.logoHover : preveState.logoHover,
 				logoBackground: changeState.logoBackground !== undefined ? changeState.logoBackground : preveState.logoBackground,
 				animatePositionOfLogo: changeState.animatePositionOfLogo !== undefined ? changeState.animatePositionOfLogo : preveState.animatePositionOfLogo,
-				lastPositionOfPage: changeState.lastPositionOfPage !== undefined ? changeState.lastPositionOfPage : preveState.lastPositionOfPage
+				lastPositionOfPage: changeState.lastPositionOfPage !== undefined ? changeState.lastPositionOfPage : preveState.lastPositionOfPage,
+				path: changeState.path !== undefined ? changeState.path : preveState.path
 			};
 		});
 
 	}
 	closeDropMenu() {
-
 		this.changeState({
-			hamburgerLogoContent: 'H',
-			hamburgerStyleChange: 'hamburgerLogo__letter--font-big',
-			dropMenu: 'drop-menu--closed',
-			logoHover: 'hamburger-hover-color--pink',
-			logoBackground: 'background-white'
+			path: ''
 		});
 	}
 	dropMenu() {
@@ -62,16 +60,38 @@ class Header extends React.Component {
 
 			this.changeState({
 				hamburgerLogoContent: 'H',
-				hamburgerStyleChange: 'hamburgerLogo__letter--font-big',
+				hamburgerStyleChange: window.location.pathname === '/' ? 'hamburgerLogo__letter--font-big' : 'hamburgerLogo__letter--font-big--other-pages',
 				dropMenu: 'drop-menu--closed',
-				logoHover: 'hamburger-hover-color--pink',
+				logoHover:  window.location.pathname === '/' ? 'hamburger-hover-color--pink' : 'hamburger-hover-color--black',
 				logoBackground: 'background-white'
 			});
 
 		}
 	}
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps.location.pathname);
+		if (nextProps.location.pathname === '/') {
+			this.changeState({
+				hamburgerLogoContent: 'H',
+				hamburgerStyleChange: 'hamburgerLogo__letter--font-big',
+				dropMenu: 'drop-menu--closed',
+				logoHover: 'hamburger-hover-color--pink',
+				logoBackground: 'background-white',
+				path: ''
+			});
+		} else {
+			this.changeState({
+				hamburgerLogoContent: 'H',
+				hamburgerStyleChange: 'hamburgerLogo__letter--font-big--other-pages',
+				dropMenu: 'drop-menu--closed',
+				logoHover: 'hamburger-hover-color--black',
+				logoBackground: 'background-white',
+				path: 'not-home'
+			});
+		}
+	}
 	componentDidMount() {
-
+		
 		window.addEventListener('scroll', () => {
 
 			const positionOfPage = window.scrollY;
@@ -131,4 +151,6 @@ class Header extends React.Component {
 	}
 };
 
-export default Header;
+const ShowTheLocationWithRouter = withRouter(Header);
+
+export default ShowTheLocationWithRouter;

@@ -6,19 +6,102 @@
 - big-desktop: 1800px +
 */
 .work {
-  height: 2000px;
-  background: black; }
+  background: black;
+  max-width: 2000px;
+  margin: 0 auto; }
 
-.work__make-something-you-love h2 {
+.work__make-something-you-love {
+  padding-bottom: 100px; }
+  .work__make-something-you-love h2 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    margin: 75px 0px;
+    padding: 0 4%; }
+    @media (max-width: 900px) {
+      .work__make-something-you-love h2 {
+        font-size: 44px; } }
+    @media (min-width: 1800px) {
+      .work__make-something-you-love h2 {
+        font-size: 76px; } }
+  .work__make-something-you-love .work__make-something-you-love__img-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 75px;
+    width: 90vw;
+    margin: 0 auto; }
+    .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a {
+      background: cover;
+      background-size: 100% 100%;
+      width: 30vw;
+      height: 30vw;
+      display: flex;
+      text-decoration: none;
+      color: white;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      font-size: 38px; }
+      @media (max-width: 1000px) {
+        .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a {
+          width: 45vw;
+          height: 45vw; } }
+      @media (max-width: 740px) {
+        .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a {
+          width: 90vw;
+          height: 90vw; } }
+      .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a h3 {
+        margin: 0px 25px 25px 25px;
+        transition: .25s; }
+      .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a div {
+        margin: 0px 25px;
+        width: 50%;
+        position: absolute;
+        opacity: 0;
+        transition: .25s; }
+    .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a:hover {
+      filter: brightness(80%); }
+    .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a:hover div {
+      opacity: 1;
+      transition: .25s; }
+    .work__make-something-you-love .work__make-something-you-love__img-links-container .work__make-something-you-love__img-links-container__img a:hover h3 {
+      margin-bottom: 75px;
+      transition: .25s; }
+
+.work__clients {
+  display: flex;
   color: white;
-  font-size: 60px;
-  font-weight: 300;
-  text-align: center;
-  margin: 75px 0px;
-  padding: 0 4%; }
-  @media (max-width: 900px) {
-    .work__make-something-you-love h2 {
-      font-size: 44px; } }
-  @media (min-width: 1800px) {
-    .work__make-something-you-love h2 {
-      font-size: 76px; } }
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 100px 0px 150px 0px; }
+  @media (max-width: 1200px) {
+    .work__clients .work__clients__select-clients {
+      flex-grow: 1; } }
+  .work__clients .work__clients__select-clients div {
+    border: 1px solid white;
+    margin: 0px 0px 25px 6%;
+    width: 15vw; }
+    @media (max-width: 900px) {
+      .work__clients .work__clients__select-clients div {
+        width: 25vw; } }
+  .work__clients .work__clients__select-clients h3 {
+    font-weight: 300;
+    margin: 0px 0px 50px 6%; }
+    @media (min-width: 1800px) {
+      .work__clients .work__clients__select-clients h3 {
+        font-size: 22px; } }
+    @media (max-width: 600px) {
+      .work__clients .work__clients__select-clients h3 {
+        font-size: 14px; } }
+  .work__clients .work__clients__imgs {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap; }
+    @media (max-width: 1200px) {
+      .work__clients .work__clients__imgs {
+        width: 90%; } }
+    .work__clients .work__clients__imgs img {
+      width: 25%;
+      height: 25%;
+      display: block; }
