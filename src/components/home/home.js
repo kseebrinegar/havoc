@@ -232,7 +232,7 @@ class Home extends Component {
 	componentWillMount() {
 
         document.body.style.overflow = 'hidden';
-
+        window.scrollTo(0, 0);
         window.addEventListener('resize', this.resizeEvent);
 	}
     render() {

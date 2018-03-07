@@ -1,0 +1,51 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+.section-sentences {
+  display: flex;
+  justify-content: space-around;
+  padding: 150px 6% 150px 6%;
+  color: #333333; }
+  @media (max-width: 900px) {
+    .section-sentences {
+      flex-direction: column;
+      padding: 75px 6% 75px 6%; } }
+  @media (max-width: 600px) {
+    .section-sentences {
+      padding: 50px 6% 50px 6%; } }
+  .section-sentences__content {
+    width: 66.666%;
+    display: flex;
+    flex-direction: column; }
+    @media (max-width: 900px) {
+      .section-sentences__content {
+        width: 100%; } }
+    .section-sentences__content h2 {
+      font-size: 60px;
+      font-weight: 500;
+      margin: -7px 0px 75px 0px; }
+      @media (max-width: 1200px) {
+        .section-sentences__content h2 {
+          font-size: 44px;
+          margin: -7px 0px 50px 0px; } }
+      @media (max-width: 600px) {
+        .section-sentences__content h2 {
+          font-size: 33px;
+          font-weight: 400; } }
+      @media (min-width: 1800px) {
+        .section-sentences__content h2 {
+          font-size: 76px; } }
+    .section-sentences__content p {
+      line-height: 30px;
+      font-size: 18px;
+      font-weight: 300; }
+      @media (max-width: 1200px) {
+        .section-sentences__content p {
+          font-size: 14px; } }
+      @media (min-width: 1800px) {
+        .section-sentences__content p {
+          font-size: 20px; } }

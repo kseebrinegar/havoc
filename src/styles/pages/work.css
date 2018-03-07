@@ -93,7 +93,8 @@
         font-size: 22px; } }
     @media (max-width: 600px) {
       .work__clients .work__clients__select-clients h3 {
-        font-size: 14px; } }
+        font-size: 14px;
+        margin: 0px 0px 25px 6%; } }
   .work__clients .work__clients__imgs {
     width: 50%;
     display: flex;

@@ -1,0 +1,62 @@
+@import "../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+.section-sentences {
+    display: flex;
+    justify-content: space-around;
+    padding: 150px 6% 150px 6%;
+    color: $color-font-light-black;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+        padding: 75px 6% 75px 6%;
+    }
+
+    @include respond(phone) {
+        padding: 50px 6% 50px 6%;
+    }
+
+    &__content {
+        width: 66.666%;
+        display: flex;
+        flex-direction: column;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }   
+
+        h2 {
+            font-size: 60px;
+            font-weight: 500;
+            margin: -7px 0px 75px 0px;
+
+            @include respond(tab-land) {
+                font-size: 44px;
+                margin: -7px 0px 50px 0px;
+            }
+
+            @include respond(phone) {
+                font-size: 33px;
+                font-weight: 400;
+            }
+
+            @include respond(big-desktop) {
+                font-size: 76px;
+            }
+        }
+
+        p {
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: 300;
+
+            @include respond(tab-land) {
+                font-size: 14px;
+            }
+
+            @include respond(big-desktop) {
+                font-size: 20px;
+            }
+        }
+    }
+}

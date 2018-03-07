@@ -4,6 +4,8 @@
 .video--home {
 	@include position-top-left-width(absolute, 75px, 60%, 40%);
 	color: white;
+	border-top: 1px solid $color-font-dark-black;
+	border-bottom: 1px solid $color-font-dark-black;
 
 	.video--homeplay__play-button {
 		width: 75px;

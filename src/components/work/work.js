@@ -5,6 +5,8 @@ import BottomBanner from '../bottomBanner';
 
 const Work = (props) => {
 
+        window.scrollTo(0, 0);
+        
         const videoInfo = {
             videoPoster: '//images.contentful.com/fiz3jwws2um7/rP56xo1coCAiE84eOweuq/4cfd265c3506ec21203fd961130e46d1/Black__1_.png?w=1600',
             videoSrc: '/video/work_movie.mp4',

@@ -217,7 +217,6 @@ class Video extends React.Component {
 				top: '0px',
     			left: '0px',
     			width:'100%',
-    			backgroundColor: 'red',
     			height: '80vh',
   				overflow: 'hidden',
   				right: '0',

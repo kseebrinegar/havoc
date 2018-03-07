@@ -10,7 +10,9 @@
   top: 75px;
   left: 60%;
   width: 40%;
-  color: white; }
+  color: white;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
   .video--home .video--homeplay__play-button {
     width: 75px;
     height: 75px;

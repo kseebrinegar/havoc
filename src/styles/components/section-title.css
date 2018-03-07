@@ -1,0 +1,40 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+.section-title {
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media (max-width: 900px) {
+    .section-title {
+      margin: 0px 0px 75px 0px;
+      align-items: flex-start; } }
+  @media (max-width: 600px) {
+    .section-title {
+      margin: 0px 0px 50px 0px; } }
+  .section-title div {
+    border-bottom: 1px solid black;
+    margin: 0px 0px 25px 0px;
+    width: 15vw; }
+    @media (max-width: 900px) {
+      .section-title div {
+        width: 25vw; } }
+    @media (max-width: 600px) {
+      .section-title div {
+        width: 25vw; } }
+  .section-title h3 {
+    font-weight: 900;
+    margin: 0px 0px 25px 0px;
+    width: 15vw; }
+    @media (min-width: 1800px) {
+      .section-title h3 {
+        font-size: 22px; } }
+    @media (max-width: 600px) {
+      .section-title h3 {
+        font-size: 14px;
+        width: 25vw; } }
