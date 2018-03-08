@@ -1,0 +1,88 @@
+@import "../abstracts/variables.scss";
+@import '../abstracts/mixins.scss';
+
+.email-and-leadership {
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	padding: 15px 0px;
+ 	padding: 0 6% 0 8%;
+    margin: 75px 0px 0px 0px;
+
+
+    @include respond(tab-port) {
+        padding: 0 0 0 0;
+        margin: 50px 0px;
+    }
+
+    @include respond(phone) {
+        margin: 50px 0px;
+        flex-direction: column;
+    }
+
+    div {
+ 		width: 25%;
+ 		padding: 0px 0px 20px 0px;
+
+ 		@include respond(tab-port) {
+            width: 50%;
+        }
+ 	}
+
+ 	div:nth-child(4) h4, div:nth-child(8) h4, div:nth-child(12) h4 {
+ 		margin-right: 0px;
+ 	}
+	
+ 	@include respond(tab-port) {
+        div:nth-child(even) h4 {
+ 			margin-right: 0px;
+ 		}
+    }
+
+	p {
+        font-size: 18px;
+        font-weight: 300;
+        font-style: italic;
+        color: $color-font-mid-grey;
+        cursor: pointer;
+        transition: .2s;
+
+        @include respond(tab-port) {
+            font-size: 16px;
+        }
+
+        @include respond(phone) {
+            font-size: 14px;
+        }
+
+        @include respond(big-desktop) {
+            font-size: 18px;
+        }
+    }
+
+    h4 {
+    	padding: 20px 0px 0px 0px;
+    	border-top: 1px solid $color-font-mid-grey;
+        font-size: 24px;
+        margin: 0px 15px 5px 0px;
+        cursor: pointer;
+        transition: .2s;
+
+        @include respond(tab-port) {
+            font-size: 22px;
+        }
+
+        @include respond(phone) {
+            font-size: 20px;
+            margin-right: 0px;
+        }
+
+        @include respond(big-desktop) {
+            font-size: 28px;
+        }
+    }
+
+    h4:hover {
+    	transition: .2s;
+    	color: $color-font-light-pink;
+    }
+}

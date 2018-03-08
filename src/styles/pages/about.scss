@@ -13,7 +13,6 @@
     width: 100%;
     color: white;
     font-size: 100px;
-    background: red;
     min-height: 80vh;
 
     @include respond(tab-port) {
@@ -217,6 +216,7 @@
         border-bottom: 1px solid $color-font-mid-grey;
         cursor: pointer;
         transition: .2s;
+        width: 100%;
 
         @include respond(tab-port) {
             font-size: 16px;
@@ -245,15 +245,31 @@
     overflow: hidden;
     
     .about__made-with-love__img {
-        height: 800px;
+        height: 750px;
         position: absolute;
-        bottom: 0px;
-        right: 0px;
+        bottom: 100px;
+        right: -25px;
         display: block;
         transform: rotate(-15deg);
         z-index: 1;
         display: block;
-        
+
+        @include respond(tab-port) {
+           display: none;
+        } 
+
+        @include respond(tab-land) {
+            height: 700px;
+            bottom: 150px;
+            right: -100px;
+            transform: rotate(-30deg);
+        } 
+
+        @include respond(big-desktop) {
+            height: 800px;
+            right: 0px;
+            bottom: 50px;
+        }     
     }
 
     @include respond(tab-port) {
@@ -267,7 +283,7 @@
     .about__made-with-love__content {
         padding: 0 0% 0 8%;
         width: 100%;
-        margin: 75px 0px;
+        margin: 50px 0px 0px 0px;
         z-index: 20;
 
         @include respond(tab-port) {
@@ -404,7 +420,106 @@
             }
         }
     }
+}
 
+.about__our-offices {
+    background: $color-font-dark-black;
+    padding: 150px 6% 150px 6%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-port) {
+        padding: 75px 6% 75px 6%;
+    }
+
+    @include respond(phone) {
+        padding: 50px 6% 50px 6%;
+    }
+
+    .section-title {
+
+        div {
+            border: 1px solid white;
+        }
+    }
+}
+
+.about__our-leadership {
+    background: white;
+    padding: 150px 6% 150px 6%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-port) {
+        padding: 75px 6% 75px 6%;
+    }
+
+    @include respond(phone) {
+        padding: 50px 6% 50px 6%;
+    }
+
+    .section-title {
+
+        h3 {
+            color: $color-font-dark-black;
+        }
+
+        div {
+            border: 1px solid $color-font-dark-black;
+        }
+    }
+
+    .email-and-leadership {
+
+        h4 {
+            transition: .2s;
+            color: $color-font-dark-black;
+            border-top: 1px solid $color-font-dark-black;
+        }
+
+        h4:hover {
+            transition: .2s;
+            color: $color-font-light-pink;
+        }
+    }
+
+    .email-and-leadership {
+        div {
+            width: 33.333%;
+
+            @include respond(tab-port) {
+                width: 50%;
+            }
+        }
+        
+        div:nth-child(3) h4, div:nth-child(6) h4, div:nth-child(9) h4, div:nth-child(12) h4 {
+            margin-right: 0px;
+        }
+
+        div:nth-child(4) h4, div:nth-child(7) h4, div:nth-child(8) h4 {
+            margin-right: 15px;
+        }
+        
+        @include respond(tab-port) {
+
+            div:nth-child(4) h4, div:nth-child(7) h4, div:nth-child(8) h4 {
+                margin-right: 0px;
+            }
+
+            div:nth-child(3) h4, div:nth-child(7) h4, div:nth-child(9) h4 {
+                margin-right: 15px;
+            }
+        }
+
+        @include respond(phone) {
+
+            div:nth-child(odd) h4 {
+                margin-right: 0px;
+            } 
+        }
+    }
 }
 
 

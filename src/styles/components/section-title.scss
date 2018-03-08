@@ -41,7 +41,11 @@
 
         @include respond(phone) {
             font-size: 14px;
-            width: 25vw;
-        }   
+            width: 100%;
+        } 
+
+        @include respond(tab-port) {
+            width: 100%;
+        } 
     }
 }

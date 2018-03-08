@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import Video from '../video';
 import SectionTitle from '../sectionTitle';
 import SectionSentence from '../sectionSentence';
+import EmailAndLeadership from '../emailAndLeadership';
+import BottomBanner from '../bottomBanner';
 
 class About extends Component {
     render() {
 
         const videoInfo = {
             videoPoster: '//images.contentful.com/fiz3jwws2um7/rP56xo1coCAiE84eOweuq/4cfd265c3506ec21203fd961130e46d1/Black__1_.png?w=1600',
-            videoSrc: '/video/work_movie.mp4',
+            videoSrc: '/video/about_movie.mp4',
             autoPlay: true,
             loopVideo: true,
             muted: true,
@@ -18,14 +20,13 @@ class About extends Component {
         const sectionInfoComponent = {
             sectionTitle: 'About us.',
             sectionHeader: 'We share the emotional experience of being human.',
-            sectionSentence: ` is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type 
-            specimen book. It has survived not only five centuries, but also the leap into 
-            electronic typesetting, remaining essentially unchanged. It was popularised in 
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-            and more recently with desktop publishing software like Aldus PageMaker including 
-            versions of Lorem Ipsum.`
+            sectionSentence: `Lorem ipsum dolor sit amet, qui ridens nusquam at, elitr electram concludaturque 
+            te sea. Pro erroribus torquatos dissentias ex, vis homero conceptam et, sapientem constituto et mea. 
+            No quo sint putant, his assum dicant te. Eirmod verear sadipscing ei ius. Esse solet cu has, in has 
+            adhuc consetetur elaboraret. Ea verear legimus eam. Tale adipisci nec ut. Illum pertinacia suscipiantur 
+            eam an. An porro equidem instructior vix, ea cum ornatus iudicabit, qui odio invidunt te. Mei intellegam 
+            comprehensam ei. No quidam timeam imperdiet vim, sanctus torquatos has ex, cu aeque bonorum tractatos sed. 
+            Vocent inciderint quo ne.`
         }
 
         const sectionTitles = {
@@ -34,6 +35,42 @@ class About extends Component {
             st3: 'Our offices.',
             st4: 'Our leadership.'
         }
+
+        const emailAndLeadership1 = [
+            {header: 'Seattle', para: 'sea@havoc.com'},
+            {header: 'San Deigo', para: 'sd@havoc.com'},
+            {header: 'New York', para: 'ny@havoc.com'},
+            {header: 'Atlanta', para: 'at@havoc.com'},
+            {header: 'Portland', para: 'pt@havoc.com'},
+            {header: 'Dallas', para: 'da@havoc.com'},
+            {header: 'Los Angeles', para: 'la@havoc.com'},
+            {header: 'San Francisco', para: 'sf@havoc.com'},
+            {header: 'Boston', para: 'bs@havoc.com'},
+            {header: 'Washington', para: 'wa@havoc.com'},
+            {header: 'Austin', para: 'as@havoc.com'},
+            {header: 'Denver', para: 'dv@havoc.com'},
+        ];
+
+        const emailAndLeadership2 = [
+            {header: 'Robert Margaretta', para: 'CEO'},
+            {header: 'Salih Diamantina', para: 'Business'},
+            {header: 'Meryem Seeta', para: 'Talent'},
+            {header: 'Simonides Manyara', para: 'Search'},
+            {header: 'Jaume Caroline', para: 'Experience Design'},
+            {header: 'Lalitha Kaja', para: 'Technology'},
+            {header: 'Iskandar Ganymede', para: 'Creative'},
+            {header: 'Ardghal Angelika', para: 'Communications'},
+            {header: 'Deimos Olufunke', para: 'Delivery'},
+            {header: 'Phil Vin', para: 'Operations'},
+            {header: 'Raghnailt Shankar', para: 'Growth'},
+            {header: 'Veronika Tihomir', para: 'Data Science'}
+        ];
+
+        const bottomBannerInfo = {
+            backgroundImg: 'url(/img/about/about-bottom-banner.jpg)',
+            header: 'A beautiful sunset.',
+            paraGraph: 'The sky broke like an egg into full sunset and the water caught fire.'
+        };
 
         return (
             <div className="about">
@@ -48,16 +85,16 @@ class About extends Component {
                     <SectionTitle sectionTitle={sectionTitles.st1} />
                     <div className="about__how-we-do-it__content">
                         <div className="about__how-we-do-it__sentences">
-                            <h2>Collaboration for brand experience.</h2>
-                            <p>It is a long established fact that a reader will be distracted by 
-                            the readable content of a page when looking at its layout. The point 
-                            of using Lorem Ipsum is that it has a more-or-less normal distribution 
-                            of letters, as opposed to using 'Content here, content here', making 
-                            it look like readable English. Many desktop publishing packages and 
-                            web page editors now use Lorem Ipsum as their default model text, and 
-                            a search for 'lorem ipsum' will uncover many web sites still in their 
-                            infancy. Various versions have evolved over the years, sometimes by accident, 
-                            sometimes on purpose.</p>
+                            <h2>Building A Team We Love.</h2>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+                            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut 
+                            fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro 
+                            quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non 
+                            numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim 
+                            ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
+                            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
+                            quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
                         </div>
                         <div className="about__how-we-do-it__graphic">
                            <img src='/img/about/what-we-do.png' />
@@ -66,31 +103,31 @@ class About extends Component {
                             <div className="about__how-we-do-it__links__containers">
                                 <h4>Strategy.</h4>
                                 <ul>
-                                    <li>Buisness Consulting</li>
-                                    <li>Innovation</li>
-                                    <li>Branding</li>
-                                    <li>Data Science</li>
-                                    <li>Research</li>
+                                    <li>Consulting Customers</li>
+                                    <li>Developing</li>
+                                    <li>Company Branding</li>
+                                    <li>Analytics</li>
+                                    <li>Scientific Research</li>
                                 </ul>
                             </div>
                             <div className="about__how-we-do-it__links__containers">
                                 <h4>Product.</h4>
                                 <ul>
-                                    <li>Buisness Consulting</li>
-                                    <li>Innovation</li>
+                                    <li>Patent</li>
+                                    <li>Prototype Developing</li>
                                     <li>Branding</li>
-                                    <li>Data Science</li>
                                     <li>Research</li>
+                                    <li>Performance</li>
                                 </ul>
                             </div>
                             <div className="about__how-we-do-it__links__containers">
                                 <h4>Marketing.</h4>
                                 <ul>
-                                    <li>Buisness Consulting</li>
-                                    <li>Innovation</li>
-                                    <li>Branding</li>
-                                    <li>Data Science</li>
-                                    <li>Research</li>
+                                    <li>Campaigns</li>
+                                    <li>Content</li>
+                                    <li>Social Media</li>
+                                    <li>CRM</li>
+                                    <li>Search Optimization</li>
                                 </ul>
                             </div>
                         </div>
@@ -98,53 +135,60 @@ class About extends Component {
                 </section>
                 <section className="about__made-with-love">
                     <SectionTitle sectionTitle={sectionTitles.st2} />
-                    <img src="/img/about/made-with-love.png" className="about__made-with-love__img" />
                     <div className="about__made-with-love__content">
                         <h2>A culture of innovation.</h2>
                         <div className="about__made-with-love__content__containers">
                             <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <h4>People.</h4>
+                                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                            </div>
+                            <div className="about__made-with-love__content__containers__items">
+                                <h4>Stores.</h4>
+                                <p>O cum soluta nobis est eligendi optio cumque nihil impedit quo.</p>
+                            </div>
+                            <div className="about__made-with-love__content__containers__items">
+                                <h4>Web.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
                             </div>
                             <div className="about__made-with-love__content__containers__items">
                                 <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
-                            </div>
-                            <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
-                            </div>
-                            <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <p>Quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                             </div>
                              <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <h4>Havoc.</h4>
+                                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+                            </div>
+                            <div className="about__made-with-love__content__containers__items">
+                                <h4>Photography.</h4>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+                            </div>
+                            <div className="about__made-with-love__content__containers__items">
+                                <h4>Online.</h4>
+                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque.</p>
                             </div>
                             <div className="about__made-with-love__content__containers__items">
                                 <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <p>Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
                             </div>
                             <div className="about__made-with-love__content__containers__items">
                                 <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <p>O cum soluta nobis est eligendi optio cumque nihil impedit quo.</p>
                             </div>
                             <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
-                            </div>
-                            <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
-                            </div>
-                            <div className="about__made-with-love__content__containers__items">
-                                <h4>Schools.</h4>
-                                <p>Our publication for people who care about design and technology.</p>
+                                <h4>Public.</h4>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
                         </div>
                     </div>
+                    <img src="/img/about/made-with-love.png" className="about__made-with-love__img" />
                 </section>
+                <section className="about__our-offices">
+                    <EmailAndLeadership sectionTitle={sectionTitles.st3} emailAndLeadership={emailAndLeadership1} />
+                </section>
+                <section className="about__our-leadership">
+                    <EmailAndLeadership sectionTitle={sectionTitles.st4} emailAndLeadership={emailAndLeadership2} />
+                </section>
+                <BottomBanner bottomBannerInfo={bottomBannerInfo} />
             </div>
         )
     }

@@ -1,0 +1,68 @@
+/*
+- phone: 0 - 600px
+- tab-port: 600 - 900px:
+- tab-land: 900 - 1200px:
+- normal styles: [1200 - 1800px] is where normal styles apply
+- big-desktop: 1800px +
+*/
+.email-and-leadership {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0px;
+  padding: 0 6% 0 8%;
+  margin: 75px 0px 0px 0px; }
+  @media (max-width: 900px) {
+    .email-and-leadership {
+      padding: 0 0 0 0;
+      margin: 50px 0px; } }
+  @media (max-width: 600px) {
+    .email-and-leadership {
+      margin: 50px 0px;
+      flex-direction: column; } }
+  .email-and-leadership div {
+    width: 25%;
+    padding: 0px 0px 20px 0px; }
+    @media (max-width: 900px) {
+      .email-and-leadership div {
+        width: 50%; } }
+  .email-and-leadership div:nth-child(4) h4, .email-and-leadership div:nth-child(8) h4, .email-and-leadership div:nth-child(12) h4 {
+    margin-right: 0px; }
+  @media (max-width: 900px) {
+    .email-and-leadership div:nth-child(even) h4 {
+      margin-right: 0px; } }
+  .email-and-leadership p {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: #888888;
+    cursor: pointer;
+    transition: .2s; }
+    @media (max-width: 900px) {
+      .email-and-leadership p {
+        font-size: 16px; } }
+    @media (max-width: 600px) {
+      .email-and-leadership p {
+        font-size: 14px; } }
+    @media (min-width: 1800px) {
+      .email-and-leadership p {
+        font-size: 18px; } }
+  .email-and-leadership h4 {
+    padding: 20px 0px 0px 0px;
+    border-top: 1px solid #888888;
+    font-size: 24px;
+    margin: 0px 15px 5px 0px;
+    cursor: pointer;
+    transition: .2s; }
+    @media (max-width: 900px) {
+      .email-and-leadership h4 {
+        font-size: 22px; } }
+    @media (max-width: 600px) {
+      .email-and-leadership h4 {
+        font-size: 20px;
+        margin-right: 0px; } }
+    @media (min-width: 1800px) {
+      .email-and-leadership h4 {
+        font-size: 28px; } }
+  .email-and-leadership h4:hover {
+    transition: .2s;
+    color: #EA178C; }

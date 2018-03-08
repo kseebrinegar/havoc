@@ -16,7 +16,6 @@
   width: 100%;
   color: white;
   font-size: 100px;
-  background: red;
   min-height: 80vh; }
   @media (max-width: 900px) {
     .about__top-banner-container {
@@ -165,7 +164,8 @@
   padding: 25px 0;
   border-bottom: 1px solid #888888;
   cursor: pointer;
-  transition: .2s; }
+  transition: .2s;
+  width: 100%; }
   @media (max-width: 900px) {
     .about__how-we-do-it__links__containers li {
       font-size: 16px;
@@ -187,14 +187,28 @@
   position: relative;
   overflow: hidden; }
   .about__made-with-love .about__made-with-love__img {
-    height: 800px;
+    height: 750px;
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 100px;
+    right: -25px;
     display: block;
     transform: rotate(-15deg);
     z-index: 1;
     display: block; }
+    @media (max-width: 900px) {
+      .about__made-with-love .about__made-with-love__img {
+        display: none; } }
+    @media (max-width: 1200px) {
+      .about__made-with-love .about__made-with-love__img {
+        height: 700px;
+        bottom: 150px;
+        right: -100px;
+        transform: rotate(-30deg); } }
+    @media (min-width: 1800px) {
+      .about__made-with-love .about__made-with-love__img {
+        height: 800px;
+        right: 0px;
+        bottom: 50px; } }
   @media (max-width: 900px) {
     .about__made-with-love {
       padding: 75px 6% 75px 6%; } }
@@ -204,7 +218,7 @@
   .about__made-with-love .about__made-with-love__content {
     padding: 0 0% 0 8%;
     width: 100%;
-    margin: 75px 0px;
+    margin: 50px 0px 0px 0px;
     z-index: 20; }
     @media (max-width: 900px) {
       .about__made-with-love .about__made-with-love__content {
@@ -293,3 +307,59 @@
       .about__made-with-love .about__made-with-love__content__containers__items:nth-child(1), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(2), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(3), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(4), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(5), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(6), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(7), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(8), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(9), .about__made-with-love .about__made-with-love__content__containers__items:nth-child(10) {
         padding-right: 0;
         padding-left: 0; } }
+
+.about__our-offices {
+  background: black;
+  padding: 150px 6% 150px 6%;
+  color: white;
+  display: flex;
+  flex-direction: column; }
+  @media (max-width: 900px) {
+    .about__our-offices {
+      padding: 75px 6% 75px 6%; } }
+  @media (max-width: 600px) {
+    .about__our-offices {
+      padding: 50px 6% 50px 6%; } }
+  .about__our-offices .section-title div {
+    border: 1px solid white; }
+
+.about__our-leadership {
+  background: white;
+  padding: 150px 6% 150px 6%;
+  color: white;
+  display: flex;
+  flex-direction: column; }
+  @media (max-width: 900px) {
+    .about__our-leadership {
+      padding: 75px 6% 75px 6%; } }
+  @media (max-width: 600px) {
+    .about__our-leadership {
+      padding: 50px 6% 50px 6%; } }
+  .about__our-leadership .section-title h3 {
+    color: black; }
+  .about__our-leadership .section-title div {
+    border: 1px solid black; }
+  .about__our-leadership .email-and-leadership h4 {
+    transition: .2s;
+    color: black;
+    border-top: 1px solid black; }
+  .about__our-leadership .email-and-leadership h4:hover {
+    transition: .2s;
+    color: #EA178C; }
+  .about__our-leadership .email-and-leadership div {
+    width: 33.333%; }
+    @media (max-width: 900px) {
+      .about__our-leadership .email-and-leadership div {
+        width: 50%; } }
+  .about__our-leadership .email-and-leadership div:nth-child(3) h4, .about__our-leadership .email-and-leadership div:nth-child(6) h4, .about__our-leadership .email-and-leadership div:nth-child(9) h4, .about__our-leadership .email-and-leadership div:nth-child(12) h4 {
+    margin-right: 0px; }
+  .about__our-leadership .email-and-leadership div:nth-child(4) h4, .about__our-leadership .email-and-leadership div:nth-child(7) h4, .about__our-leadership .email-and-leadership div:nth-child(8) h4 {
+    margin-right: 15px; }
+  @media (max-width: 900px) {
+    .about__our-leadership .email-and-leadership div:nth-child(4) h4, .about__our-leadership .email-and-leadership div:nth-child(7) h4, .about__our-leadership .email-and-leadership div:nth-child(8) h4 {
+      margin-right: 0px; }
+    .about__our-leadership .email-and-leadership div:nth-child(3) h4, .about__our-leadership .email-and-leadership div:nth-child(7) h4, .about__our-leadership .email-and-leadership div:nth-child(9) h4 {
+      margin-right: 15px; } }
+  @media (max-width: 600px) {
+    .about__our-leadership .email-and-leadership div:nth-child(odd) h4 {
+      margin-right: 0px; } }

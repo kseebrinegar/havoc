@@ -37,4 +37,7 @@
     @media (max-width: 600px) {
       .section-title h3 {
         font-size: 14px;
-        width: 25vw; } }
+        width: 100%; } }
+    @media (max-width: 900px) {
+      .section-title h3 {
+        width: 100%; } }
